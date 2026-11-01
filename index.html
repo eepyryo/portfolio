@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rudolf Art J. Nider — Portfolio</title>
+<meta name="description" content="Portfolio of Rudolf Art J. Nider, first-year Information Technology in Computer Science student at the University of the Cordilleras, Baguio City.">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000;
+  --bg-2:#050912;
+  --surface:#0a1222;
+  --line:#16294d;
+  --text:#e8f0ff;
+  --muted:#8fa3c7;
+  --blue:#2f7bff;
+  --blue-2:#5aa2ff;
+  --glow:rgba(47,123,255,.35);
+  --sans:"Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;min-height:100vh;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:1.05rem;line-height:1.6;
+  background-image:
+    radial-gradient(60rem 40rem at 82% 30%,rgba(47,123,255,.22),transparent 60%),
+    radial-gradient(40rem 30rem at 10% 100%,rgba(20,60,150,.25),transparent 65%);
+  background-attachment:fixed;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue-2);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--blue);color:#fff;padding:.6rem 1rem;z-index:20}
+.skip:focus{left:0}
+
+header.nav{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:10;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem clamp(1.25rem,5vw,4rem);
+  background:rgba(0,0,0,.72);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.brand{font-weight:700;text-decoration:none;letter-spacing:.01em}
+.brand small{display:block;font:400 .72rem var(--mono);color:var(--muted)}
+nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+nav a,nav span{display:block;padding:.45rem .9rem;border-radius:999px;font-size:.95rem;text-decoration:none}
+nav a[aria-current="page"]{background:var(--blue);color:#fff}
+nav span{color:var(--muted)}
+nav span[title]{cursor:not-allowed}
+
+main{
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(2rem,5vw,5rem);
+  align-items:center;max-width:76rem;margin:0 auto;
+  padding:clamp(3rem,9vh,6rem) clamp(1.25rem,5vw,4rem) 4rem;
+}
+.page{font:400 .8rem var(--mono);color:var(--blue-2);margin:0 0 1.5rem;display:flex;align-items:center;gap:.6rem}
+.page::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:var(--blue);box-shadow:0 0 12px var(--blue)}
+h1{margin:0;font-weight:700;font-size:clamp(3rem,8.5vw,6.5rem);line-height:.95;letter-spacing:-.035em}
+h1 em{display:block;font:italic 400 1.02em/1 var(--serif);letter-spacing:-.01em;color:var(--blue-2)}
+.tag{margin:1.6rem 0 0;font:500 1.05rem var(--mono);color:var(--muted)}
+.intro{max-width:34rem;margin:1.5rem 0 0;font-size:1.2rem}
+.intro strong{color:#fff;font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{
+  display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;
+  border:1px solid var(--blue);transition:background .2s,box-shadow .2s,transform .2s;
+}
+.btn.primary{background:var(--blue);color:#fff;box-shadow:0 0 28px var(--glow)}
+.btn.primary:hover{background:var(--blue-2);transform:translateY(-2px)}
+.btn.ghost{color:var(--text)}
+.btn.ghost:hover{background:rgba(47,123,255,.15)}
+button.btn{font:inherit;font-weight:700;cursor:pointer}
+.status{min-height:1.5rem;margin:.9rem 0 0;font:400 .85rem var(--mono);color:var(--blue-2)}
+[hidden]{display:none!important}
+.about h1{font-size:clamp(2.6rem,6.5vw,4.8rem)}
+.about .bio{max-width:34rem;margin:1.1rem 0 0;color:var(--muted)}
+.about .bio strong{color:#fff}
+.about .intro{font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--text)}
+.col{display:grid;gap:1.5rem;width:100%}
+.about .profile{max-width:none}
+.portrait{display:block;width:100%;max-width:15rem;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:0 0 40px rgba(47,123,255,.22)}
+.term{border:1px solid var(--line);border-radius:12px;background:#02060f;box-shadow:0 0 40px rgba(47,123,255,.12);padding:1.1rem 1.3rem}
+.term h2{margin:0 0 .8rem;font:500 .9rem var(--mono);color:var(--blue-2)}
+.term h2::before{content:"$ ";color:var(--muted)}
+.term ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem;font-size:.98rem}
+.term li{padding-left:1.4rem;position:relative}
+.term li::before{content:">";position:absolute;left:0;font-family:var(--mono);color:var(--blue)}
+.term label{display:block;margin-bottom:.6rem;font:500 .9rem var(--mono);color:var(--blue-2)}
+.field{width:100%;padding:.8rem 1rem;border:1px solid var(--line);border-radius:8px;background:#000;color:var(--text);font:500 1rem var(--mono)}
+.term .cta{margin-top:1rem}
+.term p{margin:0 0 .9rem;color:var(--muted);font-size:.98rem}
+
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:2.5rem 0 0}
+.skills li{padding:.4rem .9rem;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.95rem}
+
+.side{display:grid;gap:2rem;justify-items:center}
+.orbit{width:min(100%,19rem);aspect-ratio:1;position:relative;display:grid;place-items:center}
+.orbit svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.sa,.sb,.sc{transform-origin:150px 150px;animation:spin 60s linear infinite}
+.sb{animation-duration:34s;animation-direction:reverse}
+.sc{animation-duration:7s}
+.glow{animation:pulse 3.5s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.55}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.profile{width:100%;max-width:26rem;margin:0;border:1px solid var(--line);border-radius:12px;background:rgba(10,18,34,.8);overflow:hidden}
+.profile div{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding:.8rem 1.1rem;border-top:1px solid var(--line)}
+.profile div:first-child{border-top:0}
+.profile dt{font:400 .8rem var(--mono);color:var(--muted);padding-top:.15rem}
+.profile dd{margin:0;font-size:.98rem}
+
+footer{max-width:76rem;margin:0 auto;padding:1.5rem clamp(1.25rem,5vw,4rem) 2.5rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer a{color:var(--blue-2)}
+
+.projs{display:grid;gap:.9rem}
+.proj{display:block;width:100%;text-align:left;font:inherit;color:var(--text);cursor:pointer;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:12px;background:#02060f;transition:transform .25s,border-color .25s,box-shadow .25s,background .25s}
+.proj-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.proj-name{font-weight:700;font-size:1.05rem}
+.proj-lang{font:400 .78rem var(--mono);color:var(--muted)}
+.proj-more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.proj-more>span{display:block;overflow:hidden;min-height:0;color:var(--muted);font-size:.95rem}
+.proj-more>span::before{content:"";display:block;height:.6rem}
+.proj-more small{display:block;margin-top:.5rem;font:400 .8rem var(--mono);color:var(--blue-2)}
+.proj:hover,.proj:focus-visible{transform:scale(1.025);border-color:var(--blue);background:var(--surface);box-shadow:0 0 36px rgba(47,123,255,.22)}
+.proj:hover .proj-more,.proj:focus-visible .proj-more{grid-template-rows:1fr}
+@media (hover:none){.proj-more{grid-template-rows:1fr}}
+dialog.pd{padding:0;border:1px solid var(--blue);border-radius:16px;background:#02060f;color:var(--text);width:min(54rem,92vw);max-height:88vh;box-shadow:0 0 90px rgba(47,123,255,.3)}
+dialog.pd::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
+dialog.pd[open]{animation:pop .28s cubic-bezier(.2,.7,.2,1)}
+@keyframes pop{from{opacity:0;transform:scale(.94)}}
+.pd-in{padding:clamp(1.25rem,4vw,2.25rem)}
+.pd-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.pd-head .page{margin-bottom:.8rem}
+.pd h2{margin:0;font-weight:700;font-size:clamp(1.9rem,5vw,3rem);line-height:1;letter-spacing:-.03em}
+.pd h3{margin:1.6rem 0 .5rem;font:500 .9rem var(--mono);color:var(--blue-2)}
+.pd p{margin:.7rem 0 0;color:var(--muted)}
+.pd ul{margin:.4rem 0 0;padding-left:1.2rem}
+.pd li{margin:.35rem 0}
+.pd pre{margin:.4rem 0 0;padding:1rem;border:1px solid var(--line);border-radius:8px;background:#000;font:400 .85rem/1.5 var(--mono);color:var(--text);overflow-x:auto}
+.pd-x{flex:none;width:2.5rem;height:2.5rem;background:none;border:1px solid var(--line);border-radius:8px;color:var(--text);font-size:1.1rem;cursor:pointer}
+.pd-x:hover{background:rgba(47,123,255,.15)}
+.pd-code{margin-top:1.4rem}
+.pd-code summary{cursor:pointer;font:500 .9rem var(--mono);color:var(--blue-2)}
+.pd-code pre{max-height:20rem;overflow:auto}
+.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+@media (max-width:52rem){
+  main{grid-template-columns:1fr}
+  .side{order:-1}
+  .orbit{width:12rem}
+  nav ul{flex-wrap:wrap;justify-content:flex-end}
+}
+@media (prefers-reduced-motion:reduce){
+  .sa,.sb,.sc,.glow,.rise{animation:none}
+  dialog.pd[open]{animation:none}
+  .proj,.proj-more{transition:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#home">Skip to content</a>
+
+<header class="nav">
+  <a class="brand" href="#home">Rudolf Art J. Nider<small>portfolio</small></a>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#home" data-view="home" aria-current="page">Home</a></li>
+      <li><a href="#about" data-view="about">About</a></li>
+      <li><a href="#projects" data-view="projects">Projects</a></li>
+      <li><a href="#contact" data-view="contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="rise" aria-labelledby="name">
+    <p class="page">Page 01 / Home</p>
+    <h1 id="name">Rudolf Art <em>J. Nider.</em></h1>
+    <p class="tag">Fast learner. Fast worker. Built to adapt.</p>
+    <p class="intro">I am <strong>Rudolf Art J. Nider</strong>, welcome to my portfolio. Everything you need to know about me is here.</p>
+    <div class="cta">
+      <button class="btn primary" id="copy" type="button" data-email="rudolfartnider@gmail.com">Copy email</button>
+      <a class="btn ghost" href="#about">See my profile</a>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <ul class="skills" aria-label="Strengths">
+      <li>Flexible</li>
+      <li>Fast learner</li>
+      <li>Fast worker</li>
+    </ul>
+  </section>
+
+  <aside class="side" aria-label="Profile summary">
+    <div class="orbit" aria-hidden="true">
+      <svg viewBox="0 0 300 300">
+        <defs>
+          <radialGradient id="halo"><stop offset="0" stop-color="#2f7bff" stop-opacity=".45"/><stop offset="1" stop-color="#2f7bff" stop-opacity="0"/></radialGradient>
+          <radialGradient id="core"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#9fd0ff"/><stop offset="1" stop-color="#2f7bff"/></radialGradient>
+          <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5aa2ff" stop-opacity="0"/><stop offset="1" stop-color="#9fd0ff" stop-opacity=".9"/></linearGradient>
+          <filter id="blur"><feGaussianBlur stdDeviation="7"/></filter>
+        </defs>
+        <circle cx="150" cy="150" r="148" fill="url(#halo)"/>
+        <g fill="none" stroke="#5aa2ff" stroke-width="2" stroke-linecap="square" opacity=".8">
+          <path d="M6 34V6h28M266 6h28v28M294 266v28h-28M34 294H6v-28"/>
+        </g>
+        <circle class="sa" cx="150" cy="150" r="138" fill="none" stroke="#5aa2ff" stroke-width="8" stroke-dasharray="1.5 8.7" opacity=".7"/>
+        <circle cx="150" cy="150" r="124" fill="none" stroke="#2f7bff" stroke-width="1.2" opacity=".7"/>
+        <circle class="sb" cx="150" cy="150" r="112" fill="none" stroke="#5aa2ff" stroke-width="5" stroke-dasharray="90 28" opacity=".55"/>
+        <g class="sc"><path d="M150 150 L150 20 L150 150" stroke="url(#sweep)" stroke-width="0"/><rect x="150" y="148" width="124" height="4" fill="url(#sweep)"/></g>
+        <circle cx="150" cy="150" r="88" fill="#030a1c" stroke="#2f7bff" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="72" fill="none" stroke="#5aa2ff" stroke-width="22" stroke-dasharray="36 8.8" opacity=".85"/>
+        <circle cx="150" cy="150" r="56" fill="none" stroke="#9fd0ff" stroke-width="1.5" opacity=".8"/>
+        <circle class="glow" cx="150" cy="150" r="46" fill="#5aa2ff" filter="url(#blur)"/>
+        <circle cx="150" cy="150" r="44" fill="url(#core)"/>
+        <text x="150" y="164" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="42" fill="#031230">RN</text>
+      </svg>
+    </div>
+  </aside>
+</main>
+
+<main id="about" class="about" hidden>
+  <section class="rise" aria-labelledby="about-title">
+    <p class="page">Page 02 / About</p>
+    <h1 id="about-title">Here’s some <em>information about myself.</em></h1>
+    <p class="intro">Good morning, good afternoon, good evening.</p>
+    <p class="bio">I am <strong>Rudolf Art J. Nider</strong>, a first-year student at the University of the Cordilleras taking a Bachelor of Science in Computer Science (BSCS).</p>
+    <p class="bio">I graduated high school at Data Center College of the Philippines (DCCP) as a STEM Honor Student.</p>
+    <p class="bio">I’m 18 years old and I live in Baguio City, Philippines.</p>
+    <div class="cta">
+      <a class="btn ghost" href="#home">Back to home</a>
+    </div>
+  </section>
+
+  <div class="col rise">
+    <img class="portrait" width="480" height="600" alt="Portrait of Rudolf Art J. Nider in a navy suit and black tie" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUEBAQEAwUEBAQGBQUGCA0ICAcHCBALDAkNExAUExIQEhIUFx0ZFBYcFhISGiMaHB4fISEhFBkkJyQgJh0gISD/2wBDAQUGBggHCA8ICA8gFRIVICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICD/wAARCAJYAeADASIAAhEBAxEB/8QAHQAAAgEFAQEAAAAAAAAAAAAAAAECAwQFBgcICf/EAEYQAAEEAQIEBAMFBgMGBQQDAAEAAgMRBAUhBhIxQQcTUWEicYEUMpGhwQgVI0JSsTNi0RYkgrLh8UNTcpLwJSY0RHOTov/EABoBAQEBAQEBAQAAAAAAAAAAAAABAgMEBQb/xAAlEQEBAAICAgEFAQEBAQAAAAAAAQIRAzESIQQTIjJBUWFCFCP/2gAMAwEAAhEDEQA/APVaEIWGghNNQKkUmhQCEJjogE0wAmgVAooI6JoI0iipIrugXKjlCkhAuUKNFTSQRSUiEcqCKE0kQIpCEUqSpSRSBIRSEQJUmhFJJSSRCQhCBUkpI+iqkkU0KIjSKTKSKKUSN1JBREEJmkkVFCZCSqEhBQqhFJMpIpUkpJIEkU0Ee6CPZJSI7JIEUk0iikUuyZSQZNCE1A0IQoBCEwgAE6TGyEBW6YSUkAhJNAItCEQq3TQhDYQhCKEk0qHqiDbulQToIpAqSpTQioJKSKREUJ0hBFCaSGwkU0IIoTKSIEIQikhOkkCRSaSKSEbIRIiQo91OkuhVCS3TO6WyiEkmktKFGlJJRCQnaSoihw2TKSgiEFSPRJBFIqSSqkkU0iismmlXuj6qBoQgIGhCagaEBMICk0JIDumhCAQhOkCQnSVIgQikUgEIQgEj7JoRQhCECR9EFAREd0Wpbeij3QF7dEkyEkQkJ0kihKgmhERQnSSKEFCEUkIKEQikmkgRNKJ3UiltXRUpJJpFAkk0ihQkU0kQkJ/VJVQkmkUQKJ2TSKKOyipJIqJQmVFBk00JjooCkIQoGE6QAmgAmhCAQhA6IABOkIQCEIRAj6IQihCE0QkqTQilSKTQgSE0kAlaaVIgKSdIpEJRUkUi7RQmhDZUkpFRKIEqTQiooTpJAJJpFAikpJFAkiE0iiI0kVJJVUUJkJIhJJoVCSTSQCEIQJJNJFJIppFEJJNIo0ylI7ITWQVsm1AAKdIDumhCAQjZNECEIRQhMI2RBSKTQgEqTQilSKTQiIp9k0IqKE9kIhIpCECQgo2RAhCECSUlEfeIQIopSNKNWgEigiuiECQmkihIpoREUIQi7JJPZCIiUJlJAlHupJFAioqSRVCKSaE2Eknt6IVEUIQgRQgpIEeqSbuqigEFCCismmDSSFlUwmoC1IBA0IQiAJpfVPugEwkhA900IQCEIRQhCEAhCEAhCEQii0FIoApA7pONVufwVji5YfNkRPcXPjmczcVWwIH4FBflCg53wF1bUnbqvalUSQOqpuILiCeUV6rFapxDpOiYrsjVNQhxYwaHOfid8h1KgzKiaD9+65bneMugQTOjhe1vKRvlztxwfkNyR9FgMzx60uF1NwvtbTs52Hlh/wCBLQg7e9wBHujmI61+K84TePmbm5Ii0/THYkXNRdYnnI/qa2w1ZrA8UtNypWtyeNM7T5Tvy52nMaz5bD9UHdSQdx0Qud43GeThsM+WcbVcENDn5mlut0Y9XxWSB7i6W44es4udhx5eI8ZONK22TQkPaR9EGTSUGTRyNDmP5gehTd291Q7TS90rUUIQhEIoTKSKR6JKSRCBKKkkiIoTKSoihMpKBIQhaEShMpIAqKkkQgRCgpKKAQUIQZPdMItMBZaNNCEAgITQFIQnSBJhATQCVJoQCEIRAhCEIEIQgEIQiIWG2XGlAvHW0p3Na+Pn3BJ2XOuOfE/SeH8P7LgNfqGrybQ40bb5XHYF3tfZF23nK1HExGST5WXFBFHsXyPAAWnalxRjRul1HRIsvUI5ABMyLGe5svL0c11VY/MLiOrcTcf5OoDLyp9KOSCTDjyP8x8RI/ljHT3tY3P4p8QYcd8+o8SaZjeWP8F8jC4ur+VgvdVHbI/FfRseXys3JkgB2DZoHsIPoCRR/FXkfifpM0XPCZHNAsvAbyNHqd+i8oa1xfxTqGFHDn6958DhYYyRo5fnQ6rXY8ud05AneT1LrO3umh6u4j8ZMDTdLldhZJys1w+AGINjb6E96Xm7injHN1nUpM3M1CXLndsZC6gPZoH3R8lrOXns+BjHEt7A9T7lYLKynvl5AOWtqWpiztlTqBkktzz1J67n1SObjSHf4G+ocTf5rBsc9nOeYAuaRZUDbTZfYqzS34xNtlONfLPDkDy+zv5mn3pXkudqkcDZMjKflwdA9zi+r+fRa3h6iYS0tsHoaNbeizMWq/ZiGtDDHLuWEWPkR6J4m2f0viLNwy3M07PlY+Ow9ocQ5nuD/wB1v/BXifqXDWsB81y4OQ4meGqp5O72gbBcgfkQwZQysPZjhRbXYq5GoxtlMLjbNwHHruFm4rK93aPxDpeq4zdS0zNiyMeRwbKGustd7gdCtifuGujf0PT1XhLhjjjVOGp5BiTkQyDldGT8J9zW69K8F+L2la6IMPMk+z5vKGhslNEhA6h3Tr2WdNOuskEljo4dQmbAtY3FzsbMibJFK0EjpzAm1diT4uVxBHYhQV0IvZAKaAkmilF2SRTUSgFFSSpAkk0lUCipKKAKSZSRSSUlFECRTSPVVUSD6pDqpFJEJIoQUWMmpApdEwsiSEJXQtA0BAPMLCaKEwgI7ohoQhAITCSGwhCEQIQhAIQhAJHon3VnkZjYoXygtbG3rJI7laPqgsdezYsPTZMiZxjEIMnOGl1ED0HVeJtX1duRnS5xypI8zJyXytnJNMjs1Ve5XevEjxE0g6VqemYOpNyciVvkhsJPK0kbuJHT2C815OoeXA7Hjhi3cale23Ua2/JWCjk6xqjDNFBkzRMldcjXf+I4bEnufksU2Wbne+RzGiTqQ0CvYD/RXTpOd1vkc9p7c3RQiZyvEkTfJb/U8cx/NbkTZQYsk72l8fMHXu4gV9OyuBGxrJhFu0Ahrz/NXX6K3mzDE1zI3G7tzr7qEGY6R9zARsjxpOVoFfynr8yVdM2sHnzAZEsZbuaog9CrRrJZ5jTd3d7pVSHS5Bc+vkgve1h6NaVtlViwYfi87Lja4DYA2roR4jQG/aJXADcAgj/ssQ+Vzv5mn6KkZH3d/ggyeRBC4nyHAVvVdVZ8zgGtvoFSbM4nc7+qqcwd97f3QXMcpMXKSqjpSTdqxa7l2Cqc+4FovS/ZkPc5+5t1d+4WTw9SfE9od2oj2IWvtPWjurhkvL12WLGpXYOHfFXiHRImwNyG5eK3ZscvVvyd1C6LpX7QcHPGNQxnwhu1ncWevTsvL7MhzDbXfRXDMkOAs0e6zpp7+4a464e4ohYdNz4zMW8xi5rI/wBVszZL9/kvnbpup6hpWSzM0vLnx5GOsOjcRyr0ZwF4zajnYrMPUWtn1BrQ0l42l3oHaqPqSpR6KaeYbJrS/wDbTIxx5mpcP5UDLoSwvbK0D1Iuwtl07V9P1WAyYU4eW/eYdnD3r091kXxKOyD0HzQUCQhH0QJIlSSKsEUimkUCSUvoolQCiVJIqhJJpFNiJG6VqageqoCkUIKDKdU0J0FloBOrCEIhoStNAKSin3QNCEIUIQhECEIQCLQhAJWmqM0ohaXuotAvqgxnEGv6XoOky52p5TYIGN5ie/0C8vcc+J+p68xzalxcJ+0OOHDnkaT1d2bY6Ab13Vp4o8c5PFmvTRQSGPTMW2xxWfjcNuY+vt7LlZcXyhzQ7k6NJO7v9FRfZs8olfG48jRvyVXLY7rCSTQPd8ch2ND4dlVypueWQnfyx8Rb/Y2sRPkY4cGtPN68o6f6rciVcO1OGLaGBz31VvNAfJWsmp5MzeV0hDAfujsqRa2dwDY5A4jbbmJ+iPszGX5krW0Og6j5rowUe8oceZ3cD191Wl5o2fEeZzhQHp3VIZEMbqawV226ofOJcuOZzacCLoILwY3JjOmc2ngB2/pYFlYTIkjB5W/Fe/MTuf8ARZOfNfJAxlU0Mcz5gkrFeS5+4aENKF7qQaSshj6VPLRDKFLN4fDmRI4csJf6/DYC55cmMdceLLLqNX8kkWExG+ui6Vj8H5Dw1xxm8vy6qq/gra3R1tQA6/Ncb8nCPRPiZ/xy8td3URzN7WF0yTgwkAeU63N7evqrGfgjJDCWNJHYBX/04X9s34vJP00VsgJ6qu13ofxWay+FsuDpGVhJ8LJxzTmuHyXTHkxy6rjlxZY9xO+vZThdzuA5q7k+itGzPaQHDmHupOJG46EWF0ZZvDzYvPBlaOTpW4sehWb03MydK1iOTFlMZ6s5iQHAjYGuxC0lk3LRV5FmvD2kuulLE8nr3gDxFldj4enZuM18OS28eRr2yVRrkO12O1m1tOdq2HjagzOwLwMtoc8ReWWxy0bII7X0PvRXlbhniuDC0rLwMuBjzJRjJZ8TO9tPYggFbni+IvEWdDjQN1eGMwyCQSSkRlzgOpIHRc7GnrfTNUw9Y0vF1LAmbLj5DA9pabr2PuOivSV5n4Z8T87h7X5cXKg09+PPcjm40w5Hm7Nb0Hb7X1qvRegtB4g0zibSI9T0jKE8D9iP5oz/AEuHYqDLDdCQdYG1JoEUJqJBtAkin0StAkimkUAhCEoRSKZUSgFTPVTKigSChBQZQKQStNRo0IRSIE79kkIGmkhBJCQTQCEIQCEIQCEIRCJpaB4s6+7QvD7PfC/y8jIb5ERurLtjX0v8Fu+Vkw40JknlbG1tklxrYdV5Y8beOcLiLVsbT9KyftGLicxL2btc41uD37oOT6lktOOY2sDWgkCju8X3WLEh8gSFoFAgD0UZ3GRxif1qwb7qrJ8OKzGpp7l3WyQukiMbmyOkkIbu6Qczq9VhxzzSm+VjR1rZXeQ9zzI7obNV2VMiOKMPla1x60T1XSMh7/Lg8tsnIw9Q37zvmrFzzuGNAvurp8rXPHJAG9+pVSOJ8waCCwdgxndS0k2tIo3E8zt66BVyx5caYb9PRZfE0bLyAOSB7QPvOcsm7TIGf7vAfNkI+OUG69hXUrllySPRjw5VqbYXOoEGui2rROG3ZQa9zSK7eqyWNosb8hkWPC6ayNgF1DhPhKWI+ZmMI3trCNvqvHzc/r09/D8aS7yYzReBcYRiSVgIHYjclbbj8O42OCGQMsdKFUtwjwY2xtaGgED0pP7KwD7tn1Xy8ssr3X0MZJ1GAh05jGtHkt29lUdp0FbxNJHss35I9FTfGKN9FxrpK16TTYTVwAj2VB+lY5FeSB8lsBbQpW7xyjcLO2mqZehQPJuFpvrY6LWNT4Lxsi3NhB2rZdLeBvsrV7QboLpjyZY9VjLDHLuPPus8DSw878dha5u9LS8nGnw3nHy43MI6EjZepMrDhlaedgWma9wliahC5r2N3BojqCvp8Py71k+dzfDxs3g4C8Oa6j0TDwFmtd4ezNGlPMwug7PHZYV0D/KMrd2t6r6uOUym4+Pljcbqr3GyCXuLn1zbfJbPok2OMmMZOccZtFxlazmLT22taTESCOwWVgmG1dAKtWxI6rBww7U3PyYzm5+nMA/jNja1xd6jc9NlkMd+v+Hz8bWNKy55dPySOd8Ux5Hu368u17dxdgilzvStfzdMyGSYk8kfKbtji0//AD5rf8bjHG1XDydPy5JGty4HtnBoNsCw+hsXWBdD36rFjTv/AAX4nw60/FxNS5o3ZAHlTSN5Tzejuxvs4V16LqIdbi0iiOq8lcAYsuq8MSMje982I8xR8xA8yMs5+Q9xvYHoaXongPXzrvDcUk8hfk45MEjndXcpoOPvVLKtuQkCCmoqJG6ipFRPVEJBQhUJCEKCJ6pHqmeqR6oEolSUSbVCQUJFBlEwhACyuz3UlHunSGz3TCSYQ2EwkhEO00qTQCEIQCRuva00devRBBwIFhzlbT5scDXc7vjH8rdyfoq8vI1hJK59rPFhbNkYenwnIdHJ5clEtPs1v9TrHRBzHxP4v/fvFmNw8cyXG0aJvm5Ra7lMhAJLSPaqr1K4VrOXDPnySwCONrtmti+4PQD2AofO10Txbk0w6w2XDErMuQVkMczy7I/mr3N7rkmQf4IthB9b2VgrCJsfJkSSEvc02K6bfmoRyvmjtpDS3evUenvStBk8oHmvsBtN/wAql5g+zsk5WsawHl9TfU/X9F0jNYvIJD3NFDfex0VjO4faHFv3bpXM482UyMvloEq2MZI5gDXotsr/AE6A5su7jzkhjR6romJoUeJG0uc2eVzfha41X4dAtY4TxJHSec1gth77LqWDpQnY2WZjml/UO2PKvmfJ5bLqPs/E4Z4+VjUZNF1bVcs4uPMxgdsWh5ayh1+a3bQfDjKMbW5WYAx25axtNA/VbNwbpeNzzZb4QQHFjBe1A/62ulYsbXtcOTptY60vJ9W309dwk9xrelcKYWmxNGPjte4bGR27nLMxYXK4F/wHfp2WWZEA2wA3p9FTe0G7oWVmxJatHNDa+DoOqjytLegtXD+W/u/NUxsd9r6Lm3tQdGKOw/BWskIcKA6LIHcfJUZKG/queWLUrGSx0BsVZSj4TfVZKZ1Agnf1WLmeKXKx0i2k2CtnOpVZCCCrJ7gNlI0g8q1laD8lVe4eqpFwK7RlhdS0fGzoHxTRhzXdiFx7iLhPJ0bKklx2l+Keo9Au9ENKxmp4EWVjubIwObS9fDzXjv8Ajyc/BjyT/Xm58bGkVy36g7H/AETEhDg2iK7DYLauINA+wTyPgYQ2zstcc1rfvNBbdX3C+1hnM5uPg54XC6piV+xtXEU7y4OBpyt/IPMPisO6fP0Qxj4ZCJGH4TuCKW2I614a8TnAmbp+TythfO2UTFpNPoADbtsu4eG2pMPEup6fCSwvkndIDdNb5tsO/sSvKWj6m/AneAPMgyG8kkZbYcP0PuN12nw41efH4vwJssyxtbJHHEZHcxka9pHK5383t9O65ZRt6rZQFeikreCTzAC2jtuL6KsDusgKiVIpKqihM9UkCKEykgieqRTPVIqBKJUknKiKSaCgyaaSFlTUgohSRDQEI+qBoQhAwmkEWiHaEJWjIcaCXNsD197TO4pWcrzjNcDvH1B/p9vkinmPLY/M5QADuTvsuEN1F3DfHJGrShuJlTvLsh5/wZQC2yT6tLSOi7o7JhkhoPaWyDYHewuW+J/D2JkaJkZkE8LMkxkytkb8MjWAm3Ds4dA4b7+iK808ba8dZ4nz9RY7mjkmcI+3wA03b5b/AFWkySmQuv7/AG9Fc5UjmyOYTY7ArGue7cAVv+C3ItISgNLZGgEK2bLyyEcx5D2VdrWyEea6vdUpMZoHMJGj0taTS5d8OM0RMDi4nf0CusHTH+TzvB+IWA7pSs8WOd0rGNBoEALcotOyJWxxvLbkFlkY+6OxP6Bc+TkmMd+LhudZvhfS2eU2YUIHOLmt+Wwv2W75E4igbjx2ZJKa0Dr7lT0rRYo8HHgbzNa1oOx7q9k06LHnEjW0TtzHc/ivhcnJ5Zbr9Bx4THGYxs+g4zMPTYIANwLvrZW1Y73MaCNj/wDN1rWmEmNl9B0WywNrYUmFc8+1wS4/zivQBU3g9zt81WAsdbVN4rpt6rowtXN33e4A+6jZBA3PYKs4D0pQA6kLNaLtRJ/FUJ6AO52VzyUqOQygQFi9LGHn2sWVjZi7aht3WWyWEg0aWNmbQofVcK7RjpHUrGV+5V7MKtY6UGypG1IutRLqKTjSgTa6xNKnMk93M0hU7UXO2W4xWrcSYIlxXEAX6rlmZB5c7wRfZzT39Cu0aozzMZw7rk+uwOhyybo31X0/iZ/p8n5uH/TCxxgQOicQ7e2f/OykGue0CRzHs7Ouy0+hQHGOUnmsObR/RUWODJnNc22v2N9l9J8pdNMjHgB3MAbBb0XRuEMp8BwM0yco+1BzGg3b218JHYHb8FzQh4JbzdNuq3ngKV0mtxaVI1zvthaY+V/KAW2f7WsZRqPbemztycUZEf8A4oBAIqjW6yYFClguF28mgYsb5BM+NgaX9ya6lZ7t1WFIpIKECPVJM9UkAkgoRSKiVJRKgSiVJRIVCQhCgyaEkwo0akFBSHzRKkhCaukCEIQO0bISRk7RaSFUO1F4aWkOFgppEX16IMHk4WVA8y6fLKI6J8ksaW36tsgg37rkPjRquqYnDUcM0seOc2TyGNH3nMG7zVmunr3XeH0GmzQXk7xz1x+fx03S3UIsGPkaOxc74nfoppXCtTdI3Ieeba9txurGOpbugBvdqtnCtuYm79t/0Tx8YtwjO+hY+EV+a6RVxp+n/aZgG2Cep7BbppvBjMqMOlALKsu5d1jOGcQzTB3JsT8gAuu42M2PC5wKIbVDoPRfP5+ay6j6fx+HG47rnT+G8aGd/kMLGt+EUeq2fC0yHH8uNsVOcQT7q7+ylzeZzer1lHRAOilrpQXiz5LZ7fRwwxx6ZuCMtDOUVsBsquRGSAC0mlVxgHxtNK4kFnkAslebTpvStpI5qNHlGy2iCjVAj0WJ07FEUAAv13WZhAHel1xjllV2GnlsqhLSr+a0Mou3VrK+3Hce1BdKwou+ScbfoqL3ku+E/NVoyHdSKWWlVrb2cqUkbW/y2q7SHNI7kVaTuWq73+CaRipox1I9liJ49zQ2WenaA2z36rDzkEkDp6rhlHbGsPNEPRYyeOrKzr47WOyIxRWNOm2EeD6Ki61kXxEhWkjKXSG1sbSJ2UiKPRQNrcYtW045mkHuKXNuJ8Y+YSRta6XILadlpfEmPzY5NX1Xq4MvHKPJz4+WLm7WucwkO6GlSkJEzr6K6aA2V7TsGkhWUkluc1uwvqvtx8C9rn/xOthw5lsvBWV5HGejvc+m/ao2/QvA/sStXe6g0jrVLZdNie/TMfUGsaz92yN5j3fzOJB6exUpHvTRcdsGn00ADnIBHcDYf2WTVjpUjZtEw52AASwskFe4BV8ei5LSSKaihAhCEaJCEKCJ6pFM9UigSW6aRKoigoQgySEIWVNCSaIkCnaimtCQKagnzKCSEgbTRgd0I7oVAhCEFN/IAXO7d14t8YC5ni1qLZJOYhzC/b7pLbr6DZe1CNtxa8T+Ncbm+L2qyEhgdI15NVyjlrf32/NWLHMdSb5mSajEfxVQ6AHpuqjXCPSWtI3cxrGm+lkkn8lGRodGJRTuZ1URdC1Tlc0uaIzTSbA7Laft0bgvDYYWvIJsgj5LqAgBxXEDtQC0rgeBv2ZgrpQHt3XSBGGsAI2XwuW251+h45rCRrHlFjg0t2BWRETZImkigFdzYIBdIQOVYvIy3B/l47CeUXY6f9SseO2vLTJxPcxtMcOXpuVkMfKxYT5ksoI9SVpU2bJDFu9rJL/md/YLWdR1bMFA5AcT1ti6Y8UYuddsZr2m0G/a49ttnKuzW8GQfBlMdW2xXnZ02RkEkP8A4nYhSxszOZPQkLB3A6ELV45EmT0cNRiI+F7SD036pNygSe5K5Lo2t5IIincdzR7hblh6j5jB8S45enXGbbOZugVZuRyN3NrCMzB0BspnKIHVY234s2czbY18lTGXsSSflawUmdyCy4V81bHUP8ybp4s1kZnwkErGS5TALLxZWJy9UDGEtIJIWkaxr2T92F5CuOHkzlfFv8upY8JPPK0fVY6TWMRzyPMC5Lk6lnyyG5Hu7eit25UtAud169l6JwT+uF5rHWn6njHYPA+atn5+O7YEErmcWZkNHIJC1pFfd5gVk4c2Wmgi76uG3L9Cl4ZCc1buaeA5pFKmVhsDUhGOV77Z3N3SzIe2RvMx1t9VzuOnaZ7UZB1Wv6vjCTHdstjc2yrDNiBhft2VxTK79OL6iwwTyMAodT+iw1kvKz3E7PJyz6Hda8w2619vju8ZX5/lms7F8DQjPUlb5wFpM2u8S4WlxGQw5MsYewD73KS4j6C/xWhMdQGw6L0l+zPpmPlS6nnysBlxZAGGtwS3/utZX0xHpPAx/smnY+KDYhYGX8grlL4ulD8UWe65gSPVB6JIsAQhCKRQhJFI9UimkUCUSp0oEUgSEIKDIKSimshoQhA0wohSQNIoQqyYKlYKgE1UTQo37KQRAhCECJ+Erxl+0A3l8UcrlYQwwRyA9Ock0T/cL2Y5vM0gk0vLf7SeiO/2k0XV2kNjyIX4xNbBzDzC/XYlJ2rgb5myYziCSGtDhXYj/qsW17nys2JJcDayMjOeEyxmwG7givyWLikeMmOPmIYXixey6Xox7d94Tx5jCHRgWWMNdiVv2NDkDmdPy8regBJWscDQudpzS8fEKafwW7SstgYDy31pfBz7foZfTXsp2Tn5RjhPJCw0OwcVMaQ0stwkefc7fgsxDDHGefv8kT5XLtzD6LMuizbWcnRcZ9Ato/PosNk6LhBp52NNei2uWR8hpoHXqkzRcjI+7dnrYV8qsxjnmRhwwOJiaQ0qxeIifiHRdGzeFclzDYHsKpaZqOiZOK8h7QACnl/W5J+lDGlja5tDp0WwYWdyOq1qbWOjdvtSu4shze9/NS+28Zpu0eft1VQ5tjra1eDIeR1VyZ3NF7lc22XlzB/PykDsVjcnUmhxIdVrGzZLiKLiFjppXO+8bVkZXWTqJcau7WMeY33zb2qMjqJVAyOPRdp6c77VXxwkAco2QzHgeaLAp4+NLkODWNcSfZZeDQ8wizC4fMK+WmPGLWHCheAOWh/ZXbdMibR2JPQUrpmDPALLSKUxIQdyaU8qvhFkdNDSHNYG+7drVXAbLBKWG/LPW1fNcwiiSSqjI29dwrvbGtJOZ3VtkR80bh7K9NVSpTNtikTbiXHDOTNbQ67LVYPid8ltvHp/+qBvoCtUxxyjmX2eH8I+Lz/nVYbuF+q9V/swyNbp3EMbq5jJCff7hXlrHhMmRHGGOc97gAG976L3F4O8I/7LcEsjnY1uZkvMkwH8pGwA+QC3k5OllJMAAJLAR6JJnokgEIS+qihJNJFJIppfVVQoFSKSCKEIKDIISTWQJgpIVEkWhCBoSQFWaalaihETtAUQU0RNCQKdohErlfjtobdT8LMrJY3mn0+RuQ0g71dOA96K6m7fosdrenQ6poedhZMfnMnhcwt9RSD56TMMUbmyEnlbf1WHhDX50ADa+MbLaNYxJMPWszTsijJiTvgdXsSBv9Fh8fHaNax2B1jzBW3a1q303h3HpXhXH8nQsd3Lyuc0E+62Ev3+StdNg8nTYWejB/ZTe7lXwbfb76nkTlgO9LFS5sQcTJIGgdSSqGrZJbGTe4Wj5H+/5ZGXkmPFZu/mNMHz/q+Smtus1J7bzh6wMt5i0nFOWWmnTOPJEPqev0WzYUeqyNBk1WPHvtBGAB9XWVyDP8QG4LG6dw/jtkc34WyV1/DZafxHxDxdBDBLmajJEcgnljaaoBdMOHLJz5OTHH29Iak+XHbyt1qeV9dyxw/Clp2ZnFzjHltZM3+uMUR/w9/oV52j4k1xpdINWmBBr7y2jStd4hyoXl8gn8oBx9a+S6Z/Hyxm3Pj+RhldN9zI4HPJicC3sVZxwEyUFjdM1H7e93KQJR96M9R7raNNxJJZvibS899dvbKr6fprnkOoklZWXSX+UfgI29FsOk6e1oYXBbSdOY7Dc8DYdVx37K4zl6e+MWQb+SwuQwsO66bquCOZ2wI9Fo+pYTrJa2qW8ckay/4nEKtjYnmOFk/gqzMSUu+FpPpso5+ezQeWIAy6hJu2MdWj19l2n8YrfuH9PZEByxsg9C9ofJfuCQ1v5lZbKLWEtk1KVjwf6mN/INXnnW+MOKsfJfjjNGCWtvljG4B9ytfGua1I9ofqs73OF7utemfGyym3iy+ThjdV6JzGZRt0WUycDs9oP5t3/JazPqXkziPKh8gno4HmY75H/VaPokvFM2luz8HKdMY3Froz7LIQcTx5xdh6rEYMgbcxHf3XL6OWPbvjzY5dNwhma9wIdd+iycdEbrUcN7oXjlcOX/KbC2TGmuMbgrOi3a8OyHDmYoc4PdVG7hGXEPEAcuu8o/p3WrxNAiBPqtq8Qx/9zFh9AtaaKpvpuvscX4R8Xm/Otw8OtCm1vjLCayMSMxZGTuDnbUHBe+MWBkEYazYV0XnT9nfg9kTsnW8lglLsVjWiv8N73F1H/ha0/Vek2t5WAdwFcnMdEISUAeqSEIA9EkFCKEimkVFhKKkVFFBUSmVFUCRTKSgyCLSCainaEk+yIFJRTtUNCEKpTQki0ZNNKwhBK6TtRQjJoO4opWk77ppB428ctBdpfitPLGzy8bU2syg5oNcx+F/15hf1XNcFnPrOG5wHwyNaQPmvXvjZwceIeCv3lhNH7x0pxyGV1cyqe0ep6ED2XkzHaPteHKGlr+cAk93cyW+m8O49Q4zGjDZQoBo2VCdhA6K5xdsOMnu0dFW8nzOoXwcvVffxaHrcGRIxzYW2SFpGRwvrOdIWuprB19Au5/u6JxtzQfoozYDQ34YxXyTHPTq4npXC40vU453uicAKLCOvvuo8fcPy6rpbJsWBwyse3Mby7SN7gLo+pabGHW6Ot7FBYOSbKxH3j500fXZovb032Xow57KxlwzOPN7cLJOX5ckEwmYadG1hJvsurcKaZm4OnTSS4M0uTOB8JZQa1bVk8Sa+3mjgyZiT/wCXG1pP1AWPx4dbz57nnmY1xshzrIXbPnuUcuP40xu1vicEa4dQbqsYx8WcODvKOQ0fB3sdei6XpunxNxWyeXTiVHQNBpgkkLzfUuNlx91sv2drGBjRQXz+XLb1Y+vR4kdUAtgbX7tkad1iMZlPrsFnXMb+7yKJtYwn7WtH1Jo+JapmQc/Y+hW4aow25a85nMCs/tudMfj4scGI+URB8oaSwH1Wq6PwPxNkat+8svDx5zNJzyH7SwkD2F2ugRRtdFy0NlhNUwJgS+GRzCe7SQu2GembjtzvxS4N1A5TdWxMN7g1vJNGwWQR0Oy5ViY2T9sa2GGR8p+Hk5SK/wBF3WXUNexA6MzySNB6uNqzl1HKyHXJHGHf1GMEr34/Jsmniz+JLd7VeHX43DnDIhy3tkyH/G9rTZDj2C1XU8KTV9TmzRCyIP8Au+oWeMAmcHyPBPoG0rpmI3lIazqs3l37WcUx6axhwZGIQ3nNDrvstp0+d7mC63V7i6F9oIJbSyMegnHqqXG8krp4aU4ySFdx7gpnEMYTYzdZl2lmnFvEBl8UvPsFidF0fJ1nWcPTcZofLmTNgaPS+pr0A3Wycd4/mcWloF2G7Lu/gj4dYUGlwcXZuODlkOZitduGtB+J/sXG/oF9fjy+yPjc0+611ngfQYdA4Zgx44BC9/xvZ/TsAB9AFtHbqoMAGwClstuBFCCkgEj1TSQCEJHoigpIQiwkj0QgoqKSkooEUIKSC/TST+qyGhJNUCaSeygYTUUKhppWmqwE7SQgaEk0QIQhEUcqCPLwZsSRttmjLDfTcUvEnHOgv0Dj/LwQzyYmT87G0QACR09l7fcSGGj0XBPGvh2Oc4fEcTBzH/d5XVuKdzMP/MPwWMunbjvvTOYLebAhDuvKP7K+Y2lZ4FjBgvf4B/ZXrTa+Ln2+3guI2KuYmuG4VKJwpXLSCOq57dGLytOjmG7QsNkaHikkvYD7LbHjZWM0LnCxtasalahLpkMW0MAs9TSq4WkF8vM5gDfwWwDDbz8xq/Qq6bG1jKAq/RW1rdUoo2QwiNvZFcx2Q4kHqkx25Pqud9kXMIAcFli9v2OuvssTELIWRJa3G360t4Ra1bVR8Tgtae3qO62fUmkuctVyHhkhsrnpra4xzvRVaWFszCCOysIJf4nVZSI2AorXsnC5ZDbQQrf9148nVgBK2qWBsnUKz+ycr/htbmQwbNDiBtoVxHo0bTfL+SzbIa7KsGit1bkyx+LhNibsKIVWVg5bpXfMGq2mePVZ2lY2VoKtTGAVeSUNrtW53K74OGblfFMJfxvG0gVytK9i8IYJ0/gjRsMsDXMxWcwqtyLP915em0395eKOnYYbfnPjj/F2/wCS9cwhrIxGz7rdm/JfU4fcfL+TdaiY2UkIXoeAikhCKCkglCNBIo+qSBFJNCKSSZKSikUimVEqgSKEkGQQkmsgTSQqJICVpqBoSRaoadqNpozUkJWi1UNCEIlO0WEkIiD+Yt+He1ofH+LHPwhn4ZZYf/EBr7pBvf8A191vhNLXeLomO4fy5pA4BkL2g9dyPRZs9OmHcaHhurBx/wD+Mf2V02TdYvTZQ7S8c3fwAK58yivjck9vt8d9Mg2Wirls6xccm6rhxduNlwehkDOfVUnSOJ6GvVUhdblTa4K7VMDayaQ8gN9fe0y/4TRH1VrJIAyttvXsiqcsjW2SVGJ/MbHRWby+aUMb0JWUjxxHEAOymli6hItt91l5IQ7TXSvd90UB/ZYWN3KR2V5kZ0QwzEyrrcnddcUvbW86Td1rTs+QGcgLY9SyAXEevVYVmKMjK53DYLm6MfBL8YF9Fn4X/CKWB1XFdhyNyItmk072WQwpnOjY7pfqpYrMxnm3P4KRjqyBajA5rgCQrjcA2saRaFxH8tKk6UK4eNuitXtBRNKMs1BWUk6qytNkFWEz6BWpEofNbkmm1a855r7KvE40vVhHmzWWgx+Z4z6KasCRp6X0BK9NQ35bbrouAeH+PHk+LTZ3g3jwuLSBe5bX02JXoCMODacKpfT4p9r5HyLvJVSRaWy7PKEWhJFCEJWgRQgqKLDStFpKAKRTSKLCJSu0ykqpFJBQgvkwkmoGhK00UJ2khEO0JIVEk7SSWUsO0wkhaZ0adpIQO0WlaL9kQEWKWF4ixJMjRZYGzfwzV8zb/mCzNqjlNL8aRoFktIq6UqxxPTXluK+B/KHRSPYQ3oKKuee+6tJGuxte1CB97Sl31O6rBxJtfI5J7fa476XUbxYtXjJANuqxIkAdYvqqwl3O68teuMqJAVISg7BY1kxPeqVUSczdypGl66Whua+atXvEgDQe/VRBv/tarRRc5taWKMBbFk8zyAANk8vXcOCIh0zQR2tYriRs2LjHIj2A2JXD+JtS1WaZ0ONlOic/+cblbxx3dNa9bdrj4rxpZXMDxQPVUM3iRob8EjaXBdGdrmnOdJk6i7JYerJOv4rOu1USU4yEH0PZbuGmZZW+ZOuc7ibBKqabr8TXESV1q1z2fPlfCWYz2+a4UHOF8q1th4kw8oSy54njLt2lo6KzDZctO56jqEOVhvbGeawpaQfOw4njfZaDi6tyYpdI7etgD1W5cITl+C6Jx/zUVzs022eGmjpyqsZNjQVq48hpU3ygHcrkqvJKeXt8lYzTgOUJsgdQVj58jrumkqpLk9aKx0soN7qnNOS40rbzLtdMY55VW5vdXDX1H1Vm11lVHv5Yi72XoxjzZ1tfhS0z8VahM2iA4En05QQf+YLui4r4JCIz6s5x/jcwIB/pJO/4gLtXdfT4/wAXxub86EISXRyCEIQCimeiSKRSKZSQJCClaKCkUJIoStCSAQhIn3QX6EgU1AKXZJFqA3TtK0WgaEIQCdpIVgdppbIRDR2StNVkItCEQKLmlwNEpoQ243xDivxuKspr2lvPbgT3F7FY7zCDR2XSONNKgyNMGotZU+Oeo7tOxC5jKSHfJfN58dV9bgy8orF9ph6t2utS5h6rwWPfiu2vIFWriNxPyWPa/oruKQ7WsOkZGMX1V/A0NaK3WNifuFfMlDWhalC1fDZqGlT4j+kreXp0PquGapwZqzc1/JFI8NJ913WXKa0ELFZU7Hl3w362umNZ8tOGS6DnwAnIheK9QrJ2K1riC2qXb5YYnxuJY11jcFc71vSAJ3SYrd+Y20Lp5EawyJgFDZQkxTLXx7D0Vw6CSN9PYUAkDoQtsnj4DQ4Fzia9VuvDMhgzWsBsOFLWMVjpCKBW16RiPhkZK49Fwzdcbtt0pBHyVlO4C1J09sILtlZyyAg79FxbW8z/AIxusfkSG+qrTv3u1jpZASQStyM2oOebUQ5QvdDTuu0jjarsKnlO5cSQg18JUG9AsrpOms1jU4MCYuEUh+Pl2PKASV3wm7p5s7qbra/BXTpm5GdqBBEQhbHf9Tibr6fqu0LH6RpuJpWlxYmJA2GJgFNb22V+Svo4zUfH5MvLK0IQla2waSLSQBKXqgoQK0rQhFIlJCEWEUISUUFJCRKoLSNISQXykCooWRO0KNotUStASTtQS2Qo2mDsroNCVp9VQIQhRAnaXdCrJ2khCJQhCEFlqeP9qwJYD91zTY9VxGdrop3xP2c1xBC7y4czSD0Ipca4rwjg8RzjlqOU+Y369fzXk+Rjube342WrphQSHH0U3P26KlfVLmXy8o+tjVcP+MUruN+yxrXUVX80tbsVyrtGTjm5d7VY5rQK5lrmRm+W2ubqsdJqjdrcaWpGa2qXM5jsbv0Kos8yV4rcfmsFFnwNjDnygAbrE6tx7iYEZhwz5svS+wXSSkjeXw1G717LHM0Z75AXA/Fv0XLzxzqskvmec0C75fVZvF8UMyKIsmia93Yjst+N/jp4t01Dh3Cbj/xGNBO4JC0zO0Jkby+MfD6LCan4gannE8ruRY/H4v1GKQDKd5jb3tXwyZuMbLjRCCS+VZmDNDW8tgUsHBrGFnx+Yxwa4DoVSdlsaTRuz1WbLWN6bUMsEbOv6qDsiwd1rEedymuar7K9hyxI34bK5+LUyX00gO+/yVhK+ypPlJ9lbuNlbkS1IO33VaMeyt27kK6jXSOVVG7kBdA8N9P8/WftTmXyEDfsKP8A0WggCwF3Hw9004ehCZ4p0zQTY9d/1C9XDjvJ4fkZax03QbCuyErRa975gPVJCEAlaVlJFMlK7StFoGlaSEAkmUlFhIKEiUUrSTSKoSEJWoL5FoQqGhK0/opQ7TUUIJIStCCQTtRTtAJikkIiSFG0Wqyki9lG0WgZJQlaEBZulofiLp5kwINRiaeaE8jyP6T/ANVvatNSwo9Q02fDmHMyVhBCxnN42N4ZeOUrgHnI8xUdQgm03UZ8KcU+Jxb8/Q/UK3E2y+Tli+3hl6ZBrwTunJJTDv0Vg2dE04LavsvPY9MrF6tmOZGS0rRNQ1jMiNgurr3W45TPOk5S3mCq4ml4rnNfNjseP6XCwumNk7S47cqyOIdSnPkMEgHTuFGDD1OcczcaV7jvXKSV2U6bpkThK3T8e77MCvcPycc3BFHGCbqgvTjni1jjXF26TrzXEHTp9hdeS7p+Ct3vy4SQ7DJPSu69Gw6nM2MyCSnkcvNfbrX4rFahh4GqMDcyCN4BLi4AA2Vvcr0TGftwMvzpD/DxuX5lJ0GoyG5I217Ls8nD+iROJjgJ9ibWGzsDA5THHCGe4V8tM5cc05fzZ2KQ6MGjvQKrR6/kOlax0cl9yRstrl0OGYhrXFu6BoMMTPhPMVm54vHljdrDFzpHgF4O6z+JkXQvZYj7A6J1VX1V5j3G7crjdUksZnzAe6LtWrJLVZrlnTVq4Z1CvGbK0jO4VfmoUO61I5ZVltGwX6prGNhRizK8NO3Qd16NwsduLhxwsFAAdFzLww0JwbJq87SA/wCCKx/L3P1/RdV2rYL6PDh447fJ+Rn5ZaCEIXd5glaCQo37IAlCV+ySKEFFpXagLRaElVNLohJSgtJNIpFRJSTSKoLQkkSgvx1TUUIJIUUWgki0gmgAmkhQStFpWi0gkhRtO1Q0JWhGTSKSEQ7R9UkIHaLSQg5p4l8NuyIP35hRB0kLalY0bub6/Tdcm5zyr1FLG2WJzHgFpC8+8e6E3hzXG+UAzFyw6SNo/kIO4+W68fNx/wDUe/4/L/zWuGZw7qm+dxPVW5lBKLvva8OWL6eNVGyfEryOamgWAsaWuG4VN0z2/e6eq56d5WRnzGghjQ7m3JJOxVjLq0kQ5Tv8lbvnLhtv7rGZVydt1Z2u1afiHIYSA817K1bxPK0lpc4/VYqZj7PVWroja6yH1Mmwt4gnftzFSOpue7mc5a81tdFVYD6q6ZvJlWwfbh0HVT+0gRl7j17LCtcR1Kn5hBAsqaYtZGScP3pUmm3bK1a8nuriO1WNrpjiDSumOVm3Y33VVjqV0zayMbgs/wAM6FPxFrceHE0tib8c0lfdb/1WqCbcBvVd18IcJkeiZ+Xy/G+YR37AX+q78WG68vNn44+nQ8HDh0/BhxMeMMjjYGgD2CuUde6S9z5NuztRtO0lQJWi0kAhCSgZ6JIQiwkWgpKqEJWglCFaSEiii0kItQIoSStUX6aXZAUDQhCAQhCBpoStAWmophUMJpBFqBoStCqC0WhCMnaLSQgaEkDqgkAT0C8+eJnFmHxBxVlaBghj26Kz45gb55XGnNHs2h9bXT/EvjOLgvgjKzIpWt1LJaYMJnfnO3P8mjf8FwLgjhR7vDrWOM8gve6fLjw4XP6uaLMjz83ED6FZzx/+drpxX74xAyOX+G77w/NX0E7XD0Kw+WwtmJ6FqjDl7izVbL5mUlfZx9NkDAd6tN2Hzg7KzxMsSODXO3WbjkaWgrzZbj1Y3bFHAPZDdKdL/Ks2zkc4e6u43RMFnYLnutxrLuG2yj4hSs5eFyL5HfiFuj5m1bTsVZSSjn2/Jamda8Y0mTh2ZvSj9FbO0qePcsNey3jzGC7VCSSM10C151i4xpBge3bkKgYXX91bXOyIl1BY+SNo6ALeOTnYw7YXN6hXMYrZVXgBW75QwbFdJ7cr6VnODBaovyQOl2rOfM/lBs+ioxOc+Tmctyac77ZnDcXPBPcrsHhxxxhaTrOPwdqUYgGptM+Hkmw2SS+Uxn3Nbe+y49ibOHss9xtpj5/B7E1/HLmZOi5vmCRuzhG9wa6j7O5T9F6eH3k8vyJ9j1eOiLWieE3Gn+3HAGPmzvDtTwz9mzWj+sDZ/wAnDf52t6Xrs0+aEihJAIKEkAhCSAtJOkjsihFpWkgEFJCiwKKZSTagpISQBSQhQX6OiSFQ/oi0kKiSFFCgnukkjdUNNRtNQPdNRsp2gaXdFpIiSEklGT7JWhMbnbtutKAtZ40400ngnRft2e/zcmW242I00+Z36NHcq04x8ROH+ENMklkyYc3UD8MOHFIHOc6tuaj8LfUryhxHxLqvEutTatq2SZp5NqGzY29msHZoXXj4rld1i5aLjLivVOKNdl1TVcjzJK+FjfuRt7MaOwH59V6o0vhf7F+zbgaVHH/FjwmZb6G5eT5jj+a8aNZ9pyWxbnzZGs/FwH6r6L4eJCdFGnub/CEXk8tdqpdPkT7fGLxX7tvFWqQFkzvh7lYGdpDtrB9l0XjPRJNK1jKw3sNwyFoPqOx/CloWRHuV8Dq6foJ7m1vjZz45eV7uUjutjwtUa5lOcLWpSxB130UIsiSB3xk8o79wrcZkkyuLobM1obzKodRYRuQtHbnyCMFj+Zp3FFB1SWqd2XG8Ndpyxuj9QHqFRdnA73utO/eb/wDuVE6i/wBVPpVr6sbW/NA3LlaOz2k1YWtv1B7trVH7W665lucbP1WyvzA7dUnZDXd91gRlE7WOihLmhjficPotTBi8jLT5QbvYpYfJzXOcWtpWjp5Z7q2t9FKOCqXSTTld1OMFzrJtZKBmwCt4olfwtralm10mK+xRTwuuadpA1bwl1XSph8OZhTs+paS38wFyrAgdlZsOJECZJncort6lehNKw2YWkRYo+61vKb+S78E97eL5d9aeV/CnxC1HgXXvtULfPxcloblYrnV5jfb0cN6P0XtbQ9c0viTRINY0bKbk4k4+Fw6tPdrh2cOhC+dbHOx9Umj5h8E0jdvZ5XSOBfEbV+A9XOXgn7RhzEfasN7qZMPUf0vHY/Q7L62WG5uPk71XtxCw/DXEuj8XaDDrWiZInxpRRB2dE7uxw7ELLrz2NnaRSsJWgdotK1FFS5kibS+iVoGgpJWimkhJZUIKSSAtJBQqBIppKC/Qki1pTQlaLQNCVo5kDTUeYJg2gFJRQSURJCiCmKQNCOvr9Fp3E/iZwjwqJIsvUW5Wawf/AImJ/EffuRs36lJLektkbl0Kw+vcUaBw1jGfXNVgw29mPdb3fJo3K858T+OvE2qvdj6Ly6JiHb+EQ6Z3zeen0H1XKczUMjLnfkZM8s8r/vSSOLnH5k7r0Y8Fvbnc/wCO/cR/tDwRukg4X0cyEdMnOPKD7iMb/iVyXXPEPi/icubqmtznHJ//AB4j5UdenK2r+trSucvkpuyuA6mhenHixxc7lauHSk7bAegVGV9AqmXUqMknuummV1pbgdb04HocyC//AOxq+i+PIQ92/wDMf7r5vYkvlZ2NNf8Ahzxv/B4K+i+LJztDx/Nv+K8vPOnbjcz8XuH+byddjjuIkRZBH8t/dcfa9vqF591XCdDMdtt+y9q52Fjapps2DlxiWGZhY5rulELy1xvwzl8NaxJpua1z4HW7GnI/xWe/uOh/FfE58LL5R9n4vL5Y+Fczkj3Oyt3xgjoslPFyPIBsK0eFwley4sU+J8TuaJ/KfkqByXg0+M33IWTe0HsrZ8Y3NDddZk4XFZnJZ7j5qm7Kb/UqssYPYK1fEL6BblY1TOW2/vdEjl2LANpCIKsyMegS2GlPzch5trQ21Vixi4hzzzH3VZkQsbK6jZXZZuTcxQZEANgFcsiutlNrR6Ksxq5Wu0xgjjrsrgvjhidI8gBovdUnzMhaXOOwVxwvouRxhrjWFjhpWM65XEbSO/oH6pJ5VM8pjN1v/hnocuRI7XsqLl8wVC09mevzK6294jhsnZu5VngYkWFisihaGtaAKHZWvEue3TuF9UznO5RBjSSX8mmvzXv48denxuXO53deHpJvM1PImsU+aRw+ryr8SEtG6wsBNNJ6nc/Pusk13whfUnTx3tuHBnHev8Eaq7P0TM8vzByzQyDnjmb25m+o7HqF3bh/9pbSp3sg4o0OXDc40cnBd5rPmWOpw+lrywX0qcj7bRPyUywlNvodoHFnDfFGOJ9B1rFzrFlkb6e35sO4/BZmqXzZxNVy8HIZNBkSQTRm2yRvLXD5Ebrr3CH7QvGGhtix9WmGvYTduXKNStHtIN//AHWuN4tdNyvY9pWuecJ+MnBHFhjx26h+689+wxs4hnMfRr/uu/G10OtgQbBFgjuFxss7aCVpIUinaSErVUykhRQMpIStAykhCgSEFK00sX/ZJCFVCYKSFAwUWo2i1RK01FPdRk0lbZuoYGmwGbUM2HEjH80zw0fmuW8U+OOg6WH42gQnVckbCZx5IWn59XfT8VqY29JbI6097Y43SSObHGwW5ziAGj3J6LnHE/jJwtoLXw6e86zmNscuOaiB93/6WvPXE/iBxJxVI7956g92Pfw40fwRN/4R1+trU3zuK9GPD/XO5/x0HinxZ4t4jD4XZ4wcR3/62HbG16F18zvxXPZMhzibd1Nqk59qg549V6scJHO3abnkbq3fISaUXvSibZ5itorxjlAPe7VS9lTF+qC7ZENztlRcbTcVTJCBSu5YHOHUC/1X0L4WzBn8LaVm3fn4sUl/NgXzzdvGQvcXgvqH7x8I+HpeYudHjiF1+rCW/ovNzdOuDprDSwfFvC2BxboMunZg5JAOaCcfeif2I/ULNNIPRTHzXhyx3NV3xtxu48ScU6PqPDWtzaXqsJimi3BH3Xt7Ob6grXy8O3BXsjxA4E07jjQzjT1DmQgnGyQ2zG7092+oXjrXNG1XhjXJtI1jG8jIiPrbXt7Oae4K+dycfjX2OHnmc1e1B26ovCbZAQkTa5u+lrI1W7mi1eubapFu/RWVjS2DKKrMYFLk9lUa1NmkmMVZoUGgqRka0KNSK7aHXZUpstkTCeborHIzeQEk1sjQ9E1PivVm4eI0thabmnI+GMfqfQKzHaZZTGL/AELR9R4u1j7Hi3FjMP8AHnrZg9B7nsvRnD+g4WhaXFh4kIjjYKA/U+6teGeG8Hh/SosTDi5GtFk93HuT7rYwvZhhI+Vzctzv+JA7ei5z4zap9g8LtVY00/Ia2Af8TgD+VrohNBcE/aC1WtL0/Sg7eWbzCPZoXfCbyee9PP0Z+Iq7a7ZWbCq7XbL3x56rFyg4qNpEqooSi/iCi1xCqne1QI5Sir6HKfGRvt3C6Hwj4wcZcJ8kOBqTsjDbX+6ZdyxfSzbfoVy4O3VxETaal7Hs/hHx94W14R42ut/ceYaBdI7ngcfZ/Vv1C63DNBlY7MnFmjngkHMyWNwc1w9iNivnNA9zaIK3PhLjniThKcP0bUZYYibdjn4on/Nh2/CiueXD/Gpnrt7pQuNcJ+PWj6kGY3E2J+68g/8A7MNvgJ9x95v5hdexMzEz8VmVg5MeVA8W2SFwe0j5hefLHLHtuZSqqEfI2kVhoJITTYSVp7qJUDSKSFRfoSB2RYJq0U7SvdWmfqem6VCZtTz8bCjH808rWX8rO60jVfGLgnTWuEGbLqMg6NxYzR/4jQWpjb0m3QlY6prWkaJjfadX1LHwYq2MzwL+Q6n6Lz1xJ458Qajz4+iwx6RjnYPaeeZw/wDUdh9AuV5+rZmoZTsnNypcmZ3WSV5c4/Urrjw29sXOPRuueO3D+FzR6JhTak/p5sn8GP6X8R/Bcx1rxk4w1W2R6l+7Yj/JhDyz9Xbu/suYOmJ3skqkXk916ceLGOdyrK5usZma4vysuad5Nl0jy8n6lY50pPU2qJcVEuAXSYz9MbTc7oQoueoOfsqTn0taRNz1Qe9QdIbUQS40VRIN5iqwoCvRRADR7poJ2kTskkSgiVTceqm47WqIHmO+I0wdvVRUm2/qSGfmf+i9Z/s16o3I8PsvTS6nYGa9ob6NeA8f3K8njYLvH7NWqHH4j17THPps8MWQ0f5mktP5OC48s3i3j29Yxnoq1K1ikBAoq7YbC8djupuB91o3iD4f6Txxo5x8qPycyEF2NlMHxxO/Vp7hdALbCovZ1XPLGXtrHKy7jwJxBoercKa5No+sY5hnjPwu/llb2e09wfy7qxZJzbWvZPiFwFpXGeiOw8xhjyGW6DJYPjhf6j1HqO68ea9oOrcJa7LpOrRckjN2SN+5Mzs5p7j27LwcnH4vq8PNM/V7U7JRVqlHKHVuqtj1XF6hSewUXOHqqEktd1GVV8oaOqsJ8qhs5Up5ydrWw8HcFZ3FeWJ5OfH02N1Pm6GT1az9T2W5jtnLKYzdWXDnC+pcW6h5WODFiRmpcgiw32Hqf7L0Tw3w3gcP6dHiYcIjY0b+rj3JPcq60nRsHScGPEw4GwwximtaFlW0KXrxw0+Zy8tzv+JtFbKoOigEyaXR5ykdyxk9l5M8atYGpceHGY624kYb8iV6i1fLbi6dPK5wHKwndeJeJM52pcU6jmvNmWZxHyGwXfinvbGVY1pVZpVuOqqNcvXHFXtIlIG0yqInqoPbzNsKdbqbWoLUN3V3E1Iw8r9hsriNi1ILiJtBXTNqVBnRVQV0jFXkcxbVEghZvSeJdW0p3Pp+pZWIT18iVzP7Fa2HbqoHkdOiWSo67pfjTxtghodqjNQjb1ZmxB5P/GKP910DRP2gNOmLY9f0aXFPebEd5jf/AGmj/deZmyusEFXDZiepXO8WN/Tczr3NofE/D/EuP52iatj5mwLo2GpGfNh3Cy5C8GYmpZeFksycTJkx5mH4ZI3crm/IjddP0Dx24s0sMh1MY2sY7e07eSWvZ7ev1BXny4LPxdJnK9RKK53w34ycIa8WQ5c7tHyXbBuWRyE+zxt+NLobHslibLE9skbt2vYQWn5EbLz3GztuWU0I6JKKs+IuKdE4W085usZjYRXwRN3klPo1vdcF4n8btf1N0mPogGj4m4BYQ6Zw93dvp+K5HPmzSkCSV7+XYFzy7+6tTKSV7cOKRyudZPN1PLzcl2RlzyTyuNl8ri9x+pVi+d5O7lbl9qJK7SOe1UyEqBd7qFpWtyInajaiXJcyokSoFyRKiSiE53dUJHqT3U1W5NlFSaSXKvGO5VFooX6q1Oe7HyfJnB5f5XEIMmTaFTbI2Si1wI9lUG5RNJUoOOyk48oJugFb0ZaJ+Fl9O5/6KKP8U7H4P7qfaktugFD0SJQSXRvBPPdg+K+C3mpuVG+Aj1sWPzC5uCtn8P8AJ+y+I2hT393KZZ+Zr9VjP8Wp2954ktsBJWTiesRjMI29FkojsvC7L8GwgiwqTHKsN1GltLEHiqXPuO+A9M4q0iTEz4NxZimb9+J39TT+nddKIVtPCHtId6LnlJfSy2XceBeJeF9W4Q1T7HqTOaJxIiyGimSj9D7LDiZtbndewvEDS+G5NLkbr8mMyCUcobMR8R7co636ELznqXhdqTskz8PZuNk6dIOaP7RL5cjP8p2+L5rxZ8Vl9PpcXyJlNZNIdMO5VrJMPVbVleG/F0MTntxIMiv5YckOP4UFsnCfha8yR5vEtO6ObhtNgf8ArPf/ANI/FYmFdby4yb2wPA/AWTxLO3UdQa6LSWmx2OR7D/L6ld+wsPHwcWPFxYmwxRtDWsYKDR6BVIIY4IWRQsaxjQAGtFAeyrAL0446fP5OS532kFMBIBSW3FIKD38oJTJpW2Q+moNF8RNW+ycO5Ia6iWH+y8ivcXyF56k2vRPi1nFmh5Av+Xl/FedV6uKenLM1IWogKo1q9EYVGBVA1JjeXtauA0Va3pNqPIqrWBT5RaYC1pD5QdyptACXRRZMx0vltdZ6qis30UwVAKQK0ymFIEqmCpAqppVDt1IO91SBTtBXDtuqkH+6oAqQPuirlspBsFbJoHGnEHDsgdpGrZOKLsxsfbHfNp2/JamHe6mHLNkqu+6H+0BqMPlx6/pMOazo6XHd5Unzo20/kurcOeI/CPFHJFg6m2DKf0xsoeVJ8hex+hXi9sld1VZkvZsHULtcMuHG9NzOxclyjajdpWvQ5pWkSo2kqGSlaiSkXIJEqNpWlaBklRc5Fqm4oKbySogbpndMAXYQVABSpzQslaWSNDm+6qhBCDEux8jDcX4zy5n9KucTUmzODHbSdOUq7O/ayqbcaFkvnGMeaO/os2Cty8xuQDbo1SJ26KPMo2qAm0JIQPqVleHZfJ4p06QGqmafwNrE9FeabJ5WrYknpK1Zy6WPoliAPhY/+poP4i1fsbQWG4fn+08P6dODZfjxO/8A8hZ1o2Xgr0QDYqs0qkLUzIzHidNK4NY0WST0Ciq7i1kZe9wa1vVxNALzn4o/tH4GjvyNE4EhZq+oxkskznC8eFw2IH/mOHtt7rQPHLx9n1zPyuDOEcgx6TC4xZuXG6jlOveNpHRg6E9+i4CNSypWhreWNgoBrG0APQK6S1tGdxtrmu6l9v4hdlZ0rjbpHSAuHryjYN+QW9YPixo2BhRYcGkaiWxNDfMnEcjj+a5NAMmQgueQFeGMMjsu5j8lLhKnlW8ar4v5kjXjCkzoCRtQYwAfRavh+KvEek55zIcuXK5zzSQ5PxNf9eo+i1vJa02f0WLmhF9E8IeVepuB/Fjh/i2SLT5pP3bqr9hjTmhIf8jujvl1XSuXa+y8EgFjw5uxBsEbEH1XePDDxkdHPjcOcYT87H1Hjai/q09AyQ+no78Vzyw17jUu3fhSarGE8oIIIPoqZaeixppTcrPLdTHfJXjgsbnu5Y3fJWDgHjBlf7iYgd3ytb+v6LirQup+K8/m5kEN7+YXfgFzRsZXs4p6ccu0WsVZjN+ik1lKs1ldl6JGNhjaVQNobdEAFTC3pnaBqlSknijbbnfRGSJvL5od66hWsWE+Uh0xq+ylVB+RNkv5YmkBXmLiiI87iS/+yrRxNjZysbyqp0CiGmCkhbRKypAqF7phBO6TDlC0WgqAqVqladpsVA5S5lStO0FXm3T5lSBTvdBktkrUeb3Sva0RO9lEmlG0idlVMlIlRJQgdotK0iUASoOKZKiUCtMJbKQREgaRugC90E0igkN27pXajdndNAdkEqJ6oBUDsotK0u9oJfVTifyTxO7tcD+apfVJ52B91m9LH0D4AyDP4f6FPzc3NisF/LZbkz7trm/g/kfa/CbRH8wJbERfyJXR4bcBtsF4L6eiKzW38RPRebPH3xLnysGfg/hnLdCZGluTlRGjX9IK6B4p+IrdBwXaJpUgdqM4LXuaf8Jtf3XmrI06XKLppre95JLndSSuW2pHBwyTGkdDI3kcw8pHor6GXl7rauKdAc4/a4GfxYxTmgfeC0xocw9F2xu3Oxn8bJAd2HzKyXNzxkgC/YLWIpSCN1lsTKe13WweyrJzsLbDlYTNFFZfMYA0Ob0I6LDzu32QWMlAq1l3b62riQ2VPEwpc/LZjQt+Jx3PoEvSx6G8CPEybKxmcIcRyuk8mmYWXKb5m/8AluPcjsfRegZsMN6elrx/p+hMwcZoitrmbhw2IPqvQvhrx8zWMUaDq84bqULaY9+3mj2915/W3Vt78euyw2pwkY7zS3N+KAKrZYfVcYDGeeXoE0jyB4lMcOI2Md2aSPxpaSI6XQPFRvJx7Nj3ZigjBHpdn9VolL6PHNYuGV9ohqkAgdk+y6xg0Irun1VDZ1Q5o+80/RATtBG0WmRY26qA7goJ2moDqmgmOqOiQKRREiUWVEnZF7oqYPqnap2jmQVeZHMqdotBU5k7VK0+ZQZLmQTsFTvZFqipeyjajaVlUSRajZRfRBK9kiUkIGSolNRQNF7FJB6FBMEloS6lRZ9wJmkAnaSRQBRaSVoHaEkWoHsouOxrsE1F/wBwqLHrz9nDXm5HBEmkPcPMwZzQvcseOYfna6ZxlxjBw9pj4cVzZM6RvwN68vuvLvgxrOXoskudjQumEmC7zI27k8jrsD1G66/wThRcb6jn8Ram+SXGEnlQQk0DQBJP4r52fenonTmmVBlZuoSZuY4ySyOtxcSVctwuZvKG3fou0ZvBmhvkDW4xi/8AQ4hV8LhTScOnRwczh3duVz8W9uBZXCGfluBixHG+hpci4v4Un0jIkmMRYzmpzf6SvceViRNiqOMCulLn3F3Ao4hx/NbAHX8Mre72rU9JXicOLH1ayeHJbh0+queKNAyNB1ubDnB2NsJH3m9isfhvp9X2XVybFkkHDa4GttwVruQ7dbFK69Mae3zWrznneURSa0vfytFk9B6rqfCvDIw8dssrf47/AIn+3ssDwFw67UcyXVZo7xsQANsbPkPT8Bv+C7BgYbWRj4VyyrpjGKdg8zBG1ludsAO6iOHdZ0zKiz24uRjvYeZkgadl0vg7hz946oMqVtwwnuOpXXo8CAtAMTa6V7LEx201DgvimPX9NZBl1HnRD42319ws7lwiYhrzTRufdaxx5omPpeC7X9Ga3Czsb47Z92SuxCxWH4gYuZwy7UMjmhkhBErTtRAWoV5p8TMkZPihxDIDbWZPlN+TWgf6rTFkNWy35+r5udIbfkTySn/icT+qx/ovpTp5r2EIQtMpJqKaoaZSQgN0+UOrfdCSCO4O4UrVATE5Jj9rVZA01HoglAWlYQSlaBkotRJtJFT5kcyhaFDSpfui1C0rUGTtFqAKLWkStO1DqEWqJ2i1G0AoJ32RfsohCB2khCBpFCR6IGzoVIqmz7xCk5A7SS7JEoGlaL3SUDtK97StFoJWou3aiwEnWort3gVyuyNOLqLRJNC697Bvb816X0DS8HRS7B0+AQQFzpOUepNleXPA7I5JGCx/Dz6+hAXq1h5c+M+oXgy/KvROlxlMHNapsFgK5yG2AVTiYLpSKpOxQ8q7xcaMPotBFKq0BrU8Rwlncy6ACzaPPfjx4bMyNHk1zTscF8FyEgdB/MP1+i8kxnkmIu9+y+l3Fn7qi4Q1WbWXBunRYsj53d+QNN17r5tjTcnMy3PgAghe4lgcbc1t/CD71S3izWV84HSiHbELXSQZLtZHKxcrCaY/3hzereQUrDGdG3KjdltL4Q4GQN2JbfxV9LVT9vRPCOjNwOCMSHkDZHxtlk93O+L9QFsWNjGSRkMYJe9waquIyEaK049eTysMdHbloV+S2Tg7Tft2sNlLbZF/ded1jofD2ls03SY4g0B5FuNLOMbSUbQABWwVXo0rrGWjeIb2nh+WG/8AE2XIdR8PNWn0OTOxMhjcaSB08oL+WgGk7jv0XUPECXmZHAO7gpcXSN0rwf16e+Xy9MkaCPUs5f1WZ7q14bLuZjXV1FqCkRytDf6RX4KC+lHmNMKPdNaZNMJJoHeyYSTBQNRcaCapyGmEoLXHPNkSvPyCu1aYY/hF39RtXVoJWkkUWgLSJpBpRJCinaVpWErCjSVotRtCCVqJKLUSUGUBRaiCi1WErRYUbQFRO/RO1BNBK0wVFAKCRKfVRtF0qH23SKVpEoBhp6mTsqN08FVCVAWkle9JEoJItRtBKB2gFRtF+ygkCkUd0FQdM8GckM1PNiv7s8Mn9x+i9g838SB/rS8UeFM3lcVZsf8AVAxw9+V//Ve0o38+Fiyg3bWleLk9ZV6MemakFtCUYrdTG8QPsqT3hjSVyrSllZHlxndLQnmWeZ3YALC6jM50gaCs1oLOSGQ+oCQaV49ahHg+DmqQPn5H5ssOKwDq+5ASPwafwXjYGOOB8jWg1vuV2f8AaU4r/eHGOncLwS3FpTfPmAO3nSDa/kz/AJlxOc8unOfXU0SukYrXc2V0kriT3Vhz04K4nPxEK0H3gVWXqDgfPZqPhtpk7DzPZE3HdfXmZ8P6Bdv4L0z7HpbZXNAe/c2vMfgZqH2vJzOGpHbGRmZEPa+V4/5T9V6/x42wYzIm7ABcte3VeN6Jn7pVNjrKlKeWNy0OYcWO+0cRYsHXmkaPzVp41Zn2HwU1SMdcgw49X1DpBf5WrnO/3rjnHb1DX3+AWoftHZ4g4C0jT2up2Vnh1eoZG4n+4V45vJMunliT7xPruqZUnEk7qNr3uACajadohhNIFO1Q+6Y6pBMHdBInZWmW/lgPqdlck7KxzDzcjB1JUFSAckLR7Ktapt2FKVqqkgqNouu6JoFRJQSokqNSHaVqNpWip2jso2i0EkiUrSJUtGTBTtQBRarmlaLUUKiVp2o2i1RO0Wo2gFBO07ULRaCVqJKL2USUCJqlVvYKg7oqjHW36IGhRtFlA0WlaV7oJItK0dlkStBOyjafZBs/h1J5fHsTLrzceVv4AO/Re2dLk87hzCkvrE1eGeC5fJ490lxOzpHM/wDc0he2eF5PN4OxSTu1pb+BXk5fyejDpuERuBp9laZclMKr4xvFb8lY5rqC4VpiJBzz2s3FqONpWjZuo5bgzGxIXTyEmvhaCT/ZYEPAm9d1pXjZxB+6PCjIwY38s2rzNxRR/kHxP/IV9Ug8s69rGTxFxHm67nG8nPndkP8AbmNhv0FD6K3znFmm0b+LdUIgZJxfcqesu5I2xk9r2XVzrW5jZvp8lb3RVZ5JVA9UG8eF2tt0DxQ0DUpHcsP2gQTG6+CT4D+ZB+i9/H818z4ybtppw6H0PYr6DeHfEI4p8O9E1vmuXIxmiUdxI34XfmCs1uNti+8jLfywPKkzZW+ou5cN59BazVc6wf43G739eUFco/aYzy7V+GdLHSLGnyT7FzmsH5By6zw23zeJMuQ9qFrgP7QuX9o8WHQBxLcTAghr0JLnn/mC6cX5Jn05C47qKCd1Fe1wSStK00DUlAHdStXYl3QCkChRAXb7qwkPPmtHZqvHHYqxh+LIkf13pSrIuwVK1AKSodqJKCdlG90UFyiTsglQJUqmlaVotZE7QoKVoGUiUWoOKgyjSnagDsna6OaSErStA7RaVotUSBTtQtO1RMFCiCgFBIpJWkgCnGdiFAlDD8SCoUrQVG0VK0FRtNZDTvdRR3RErQo9kWir3RJvs3FGlTk/cyo/wul7d4Hl8zhV8d2WSOHyXhMS+RkQz3/hyMf+DgV7e8Op+fRsxnX4g/8AELy8vcdsOq6HhG8ULHajIG3avcA/7sR7rDazLyur1XCukY6BxlyyB0tef/H3Wzm8bY2iskJg0vEALe3myHmcf/aGheg9Ka0zOe7oe68d8Y6qde4z1jV+YublZT3Mv+kHlb+QCuJlWIwmXICCK6rHarLzyH0WXx6ZC51Db1Wv5z+Zx3W3Ksa5UXKq5U3IQ2leuP2YtaOTwZqeiSP3wcoyRj0a/f8Ava8jNXdv2adW+x8f5umufTc3F2Hq5pv9VK1HsNp3VhrT+TTZT6NKuo3WVjOJJOTSpT0+FYrTUuEWc2VlyjvJS8r+LWf+8fFviPIDrazKMI+TGhv6L1hwa0MwpZj08xzj8l4m17NdqHEOo57ncxyMqaW/UOe4j8qXfhjObGOKRKRKW69TkaYUbRaCaagmglZTtRQeiClK7la4+yoYoqKz/MbTy3VHXc7KUQ5Y2t9FBVHRCVotUFqBNJkqBKKCdlElO1ErNBeyLStF+iyJhNQB2TtAyoOKkSqbioMm07KVoQurFFoQhEARaEIH3RZQhA7RZQhAXSVoQgROyiD8QQhFioSo2hCKdotCEQJoQhBaLQhFUMjeJw78pXsnwhzPtOjNfd+biRSfP4QhC83N+nXjdXwD/BkHutd16Xll9+gQheaurC6/qP7j8Otc1gbPgwpCz3eRyt/NwXj3kILWOs8oAJPdCFqMVUncI8ZwAvarC1rJNknshC2ysnbKmUIQIFb54R6mdM8VtBn5uRr5/KcfUO2QhKs7e9ITvSw/F0nLpT/cIQubo1iDKGkeG2q6mTX2fBnnB9wxxH50vEBJETAR0aP7IQvTw9OWamSo2hC9DBoQhBJNCEAk51BCEFjkHmmY33tXA22QhZDStCFRElRQhS0IqJKELNESUAoQoJAp2hCAtU3lCFKr/9k=">
+    <dl class="profile">
+      <div><dt>Student</dt><dd>Rudolf Art J. Nider</dd></div>
+      <div><dt>Age</dt><dd>18</dd></div>
+      <div><dt>Program</dt><dd>BS Computer Science (BSCS), First Year</dd></div>
+      <div><dt>University</dt><dd>University of the Cordilleras</dd></div>
+      <div><dt>High school</dt><dd>Data Center College of the Philippines (DCCP), STEM Honor Student</dd></div>
+      <div><dt>Location</dt><dd>Baguio City, Philippines</dd></div>
+      <div><dt>Languages</dt><dd>Japanese, English, Filipino</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:rudolfartnider@gmail.com">rudolfartnider@gmail.com</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+639565063993">0956 506 3993</a></dd></div>
+    </dl>
+    <section class="term" aria-labelledby="strengths">
+      <h2 id="strengths">About my strengths</h2>
+      <ul>
+        <li>I can work under pressure.</li>
+        <li>I’m capable of improvising and free-styling on most things.</li>
+        <li>I’m a good listener and speaker, mostly one on one.</li>
+      </ul>
+    </section>
+    <section class="term" aria-labelledby="goals">
+      <h2 id="goals">My goals</h2>
+      <ul>
+        <li>Get a good job.</li>
+        <li>Build a career that makes me rich.</li>
+      </ul>
+    </section>
+    <section class="term" aria-labelledby="learning">
+      <h2 id="learning">Currently learning</h2>
+      <ul>
+        <li>Computer science fundamentals in my first year of BSCS.</li>
+        <li>Building websites with HTML, CSS and JavaScript, starting with this portfolio.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<main id="projects" class="about" hidden>
+  <section class="rise" aria-labelledby="projects-title">
+    <p class="page">Page 03 / Projects</p>
+    <h1 id="projects-title">My <em>projects.</em></h1>
+    <p class="bio">Currently in development! Stay Tuned for more.</p>
+    <p class="bio">Hover over a project to preview it. Click it to see the full details and download the code.</p>
+    <div class="cta">
+      <a class="btn ghost" href="#home">Back to home</a>
+    </div>
+  </section>
+  <div class="col rise">
+    <div class="projs">
+      <button class="proj" type="button" data-p="radix" aria-haspopup="dialog">
+        <span class="proj-top"><span class="proj-name">Radix Conversion</span><span class="proj-lang">Java</span></span>
+        <span class="proj-more"><span>Converts numbers between binary, octal, decimal and hexadecimal.<small>Open for details and code</small></span></span>
+      </button>
+      <button class="proj" type="button" data-p="arith" aria-haspopup="dialog">
+        <span class="proj-top"><span class="proj-name">Binary Arithmetic</span><span class="proj-lang">Java</span></span>
+        <span class="proj-more"><span>A calculator that mixes number bases in a single expression.<small>Open for details and code</small></span></span>
+      </button>
+      <button class="proj" type="button" data-p="bitwise" aria-haspopup="dialog">
+        <span class="proj-top"><span class="proj-name">Bitwise Operations</span><span class="proj-lang">Java</span></span>
+        <span class="proj-more"><span>Runs AND, OR, XOR, NOT and bit shifts and shows the result in every base.<small>Open for details and code</small></span></span>
+      </button>
+    </div>
+    <section class="term" aria-labelledby="how-built">
+      <h2 id="how-built">How this site was built</h2>
+      <ul>
+        <li>Plain HTML, CSS and JavaScript. No frameworks, no build tools.</li>
+        <li>One file with four views: Home, About, Projects and Contact.</li>
+        <li>Fully usable with a keyboard, with visible focus and a skip link.</li>
+        <li>Adjusts to phone and desktop screens.</li>
+        <li>Animations stop for visitors who turn on reduced motion.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<main id="contact" class="about" hidden>
+  <section class="rise" aria-labelledby="contact-title">
+    <p class="page">Page 04 / Contact</p>
+    <h1 id="contact-title">Need Me? <em>Here’s my Contacts</em></h1>
+    <p class="intro">Call or text me.</p>
+    <p class="bio">I respond faster via number, so that’s the best way to reach me. You can also copy my email below.</p>
+    <div class="cta">
+      <a class="btn ghost" href="#home">Back to home</a>
+    </div>
+  </section>
+  <div class="col rise">
+    <div class="term">
+      <label for="phone-field">Phone (fastest reply)</label>
+      <input class="field" id="phone-field" type="text" readonly value="0956 506 3993">
+      <div class="cta">
+        <button class="btn primary" type="button" id="copy-phone">Copy number</button>
+        <a class="btn ghost" href="tel:+639565063993">Call</a>
+      </div>
+      <p class="status" id="status3" role="status" aria-live="polite"></p>
+    </div>
+    <div class="term">
+      <label for="email-field">Email</label>
+      <input class="field" id="email-field" type="text" readonly value="rudolfartnider@gmail.com">
+      <div class="cta">
+        <button class="btn ghost" type="button" data-copy>Copy email</button>
+        <a class="btn ghost" href="mailto:rudolfartnider@gmail.com">Open email app</a>
+      </div>
+      <p class="status" id="status2" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+</main>
+
+<dialog class="pd" id="pdlg" aria-labelledby="pdlg-title">
+  <div class="pd-in">
+    <div class="pd-head">
+      <div>
+        <p class="page" id="pdlg-lang"></p>
+        <h2 id="pdlg-title"></h2>
+      </div>
+      <button class="pd-x" type="button" id="pdlg-x" aria-label="Close">&#x2715;</button>
+    </div>
+    <div id="pdlg-body"></div>
+    <details class="pd-code" id="pdlg-code"><summary>View the code</summary><pre id="pdlg-src"></pre></details>
+    <div class="cta">
+      <button class="btn primary" type="button" id="pdlg-dl">Download code</button>
+      <button class="btn ghost" type="button" id="pdlg-copy">Copy code</button>
+      <button class="btn ghost" type="button" id="pdlg-close">Close</button>
+    </div>
+    <p class="status" id="pdlg-status" role="status" aria-live="polite"></p>
+  </div>
+</dialog>
+
+<footer>
+  © <span id="yr">2026</span> Rudolf Art J. Nider. Open source under the MIT License.
+</footer>
+<script>
+document.getElementById("yr").textContent=new Date().getFullYear();
+(function(){
+  var views={home:document.getElementById("home"),about:document.getElementById("about"),projects:document.getElementById("projects"),contact:document.getElementById("contact")};
+  var titles={home:"Rudolf Art J. Nider — Portfolio",about:"About — Rudolf Art J. Nider",projects:"Projects — Rudolf Art J. Nider",contact:"Contact — Rudolf Art J. Nider"};
+  function route(){
+    var key=location.hash.slice(1);
+    if(!views[key])key="home";
+    for(var k in views){views[k].hidden=(k!==key)}
+    document.querySelectorAll("nav [data-view]").forEach(function(a){
+      if(a.dataset.view===key)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
+    });
+    document.title=titles[key];
+    window.scrollTo(0,0);
+    return key;
+  }
+  route();
+  window.addEventListener("hashchange",function(){
+    var h=views[route()].querySelector("h1");
+    h.setAttribute("tabindex","-1");h.focus({preventScroll:true});
+  });
+})();
+(function(){
+  var btn=document.getElementById("copy"),status=document.getElementById("status"),timer;
+  function say(msg){status.textContent=msg;clearTimeout(timer);timer=setTimeout(function(){status.textContent=""},2500)}
+  function fallback(text){
+    var t=document.createElement("textarea");
+    t.value=text;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
+    document.body.appendChild(t);t.select();
+    var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+    document.body.removeChild(t);return ok;
+  }
+  btn.addEventListener("click",function(){
+    var email=btn.dataset.email;
+    function done(ok){if(ok){say("Copied "+email)}else{say("Couldn’t copy automatically. Opening the Contact page.");location.hash="contact"}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(email).then(function(){done(true)},function(){done(fallback(email))});
+    }else{done(fallback(email))}
+  });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("email-field"),btn=document.querySelector("#contact [data-copy]"),st=document.getElementById("status2"),t;
+  function say(m){st.textContent=m;clearTimeout(t);t=setTimeout(function(){st.textContent=""},5000)}
+  function legacy(){var ok=false;try{ok=document.execCommand("copy")}catch(e){}return ok}
+  function fin(ok){say(ok?"Copied "+f.value:"Press Ctrl+C to copy the selected address.")}
+  btn.addEventListener("click",function(){
+    f.focus();f.select();f.setSelectionRange(0,f.value.length);
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(f.value).then(function(){fin(true)},function(){fin(legacy())});
+    }else{fin(legacy())}
+  });
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById("phone-field"),btn=document.getElementById("copy-phone"),st=document.getElementById("status3"),t;
+  function say(m){st.textContent=m;clearTimeout(t);t=setTimeout(function(){st.textContent=""},5000)}
+  function legacy(){var ok=false;try{ok=document.execCommand("copy")}catch(e){}return ok}
+  function fin(ok){say(ok?"Copied "+f.value:"Press Ctrl+C to copy the selected number.")}
+  btn.addEventListener("click",function(){
+    f.focus();f.select();f.setSelectionRange(0,f.value.length);
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(f.value).then(function(){fin(true)},function(){fin(legacy())});
+    }else{fin(legacy())}
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script type="text/plain" id="src-radix">import java.math.BigInteger;
+import java.util.Scanner;
+
+public class RadixConversion {
+    private static final String DIGITS = "0123456789ABCDEF";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueChoice;
+
+        do {
+            System.out.println("\n=== Base Converter ===");
+            printMenu();
+            int inputChoice = readChoice(scanner, "Enter choice (1-4): ");
+            int fromBase = getBaseFromChoice(inputChoice);
+
+            System.out.print("\nEnter your value: ");
+            String rawInput = scanner.nextLine().trim();
+            String cleanInput = rawInput.replaceAll("\\s+", "");
+
+            System.out.println("\nSelect TARGET conversion format:");
+            printMenu();
+            int targetChoice = readChoice(scanner, "Enter choice (1-4): ");
+            int toBase = getBaseFromChoice(targetChoice);
+
+            try {
+                BigInteger decimalValue = parseToBigInteger(cleanInput, fromBase);
+                String result = formatBigInteger(decimalValue, toBase);
+                String subscript = getSubscript(toBase);
+
+                System.out.println("\n----------------------------------");
+                System.out.printf("Converted Result: (%s)%s\n", result, subscript);
+                System.out.println("----------------------------------");
+            } catch (IllegalArgumentException e) {
+                System.out.println("\nError: '" + rawInput + "' contains invalid digits for the selected input base.");
+            }
+
+            System.out.print("\nDo you want to perform another conversion? (Y/N): ");
+            continueChoice = scanner.nextLine().trim();
+
+        } while (continueChoice.equalsIgnoreCase("Y"));
+
+        System.out.println("\nThank you for using Base Converter! Program terminated.");
+        scanner.close();
+    }
+
+    private static void printMenu() {
+        System.out.println("Select your format:");
+        System.out.println("1 - Binary");
+        System.out.println("2 - Octal");
+        System.out.println("3 - Decimal");
+        System.out.println("4 - Hexadecimal");
+    }
+
+    private static int readChoice(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String input = scanner.nextLine().trim();
+
+            try {
+                int choice = Integer.parseInt(input);
+                if (choice >= 1 && choice <= 4) {
+                    return choice;
+                }
+            } catch (NumberFormatException ignored) {
+                // Try again
+            }
+
+            System.out.println("Invalid choice. Please enter 1, 2, 3, or 4.");
+        }
+    }
+
+    private static int getBaseFromChoice(int choice) {
+        return switch (choice) {
+            case 1 -> 2;
+            case 2 -> 8;
+            case 3 -> 10;
+            case 4 -> 16;
+            default -> throw new IllegalArgumentException("Invalid base choice: " + choice);
+        };
+    }
+
+    private static BigInteger parseToBigInteger(String value, int base) {
+        if (value == null || value.isEmpty()) {
+            throw new IllegalArgumentException("Value cannot be empty.");
+        }
+
+        boolean negative = false;
+        if (value.startsWith("-")) {
+            negative = true;
+            value = value.substring(1);
+        }
+
+        if (value.isEmpty()) {
+            throw new IllegalArgumentException("Value cannot be empty.");
+        }
+
+        BigInteger result = BigInteger.ZERO;
+        BigInteger baseValue = BigInteger.valueOf(base);
+
+        for (int i = 0; i < value.length(); i++) {
+            char ch = Character.toUpperCase(value.charAt(i));
+            int digit = DIGITS.indexOf(ch);
+
+            if (digit < 0 || digit >= base) {
+                throw new IllegalArgumentException("Invalid digit '" + ch + "' for base " + base);
+            }
+
+            result = result.multiply(baseValue).add(BigInteger.valueOf(digit));
+        }
+
+        return negative ? result.negate() : result;
+    }
+
+    private static String getSubscript(int base) {
+        return switch (base) {
+            case 2 -> "₂";
+            case 8 -> "₈";
+            case 10 -> "₁₀";
+            case 16 -> "₁₆";
+            default -> throw new IllegalArgumentException("Unsupported base: " + base);
+        };
+    }
+
+    private static String formatBigInteger(BigInteger value, int base) {
+        if (base < 2 || base > 16) {
+            throw new IllegalArgumentException("Base must be between 2 and 16.");
+        }
+
+        if (value.equals(BigInteger.ZERO)) {
+            return "0";
+        }
+
+        BigInteger baseValue = BigInteger.valueOf(base);
+        BigInteger current = value.abs();
+        StringBuilder sb = new StringBuilder();
+
+        while (current.compareTo(BigInteger.ZERO) > 0) {
+            int digit = current.mod(baseValue).intValue();
+            sb.append(DIGITS.charAt(digit));
+            current = current.divide(baseValue);
+        }
+
+        if (value.signum() < 0) {
+            sb.append('-');
+        }
+
+        return sb.reverse().toString();
+    }
+}
+</script>
+<script type="text/plain" id="src-arith">import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class BinaryArithmetic {
+
+    private static final String DIGITS = "0123456789ABCDEF";
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueChoice;
+
+        do {
+            System.out.println("\n=== Multi-Base Multi-Operation Calculator ===");
+            System.out.println("Format numbers as (value)_base  OR  write plain decimal numbers.");
+            System.out.println("Supported bases: 2 (Binary), 8 (Octal), 10 (Decimal), 16 (Hex)");
+            System.out.println("Supported operators: +  -  *  /");
+            System.out.println("\nExample input: (1010)_2 - 5 + (12)_10 * (1A)_16 + (77)_8");
+
+            System.out.print("\nEnter expression: ");
+            String input = scanner.nextLine().trim();
+
+            try {
+                BigInteger result = evaluateExpression(input);
+
+                System.out.println("\n----------------------------------");
+                System.out.println("FINAL RESULT IN ALL BASES:");
+                System.out.printf("Binary (Base 2)   : (%s)₂\n", formatBigInteger(result, 2));
+                System.out.printf("Octal (Base 8)    : (%s)₈\n", formatBigInteger(result, 8));
+                System.out.printf("Decimal (Base 10) : (%s)₁₀\n", result.toString());
+                System.out.printf("Hex (Base 16)     : (%s)₁₆\n", formatBigInteger(result, 16));
+                System.out.println("----------------------------------");
+            } catch (Exception e) {
+                System.out.println("\nError evaluating expression: " + e.getMessage());
+            }
+
+            System.out.print("\nDo you want to evaluate another expression? (Y/N): ");
+            continueChoice = scanner.nextLine().trim();
+
+        } while (continueChoice.equalsIgnoreCase("Y"));
+
+        System.out.println("\nThank you for using the Calculator! Program terminated.");
+        scanner.close();
+    }
+
+    private static BigInteger evaluateExpression(String expression) {
+        Pattern pattern = Pattern.compile("\\(([-+]?[0-9A-Fa-f]+)\\)_(\\d+)|([-+]?[0-9A-Fa-f]+)|([+\\-*/])");
+        Matcher matcher = pattern.matcher(expression);
+
+        List<BigInteger> values = new ArrayList<>();
+        List<Character> operators = new ArrayList<>();
+
+        while (matcher.find()) {
+            if (matcher.group(1) != null) {
+                String rawVal = matcher.group(1);
+                int base = Integer.parseInt(matcher.group(2));
+                values.add(parseToBigInteger(rawVal, base));
+            } else if (matcher.group(3) != null) {
+                String rawVal = matcher.group(3);
+                values.add(parseToBigInteger(rawVal, 10));
+            } else if (matcher.group(4) != null) {
+                operators.add(matcher.group(4).charAt(0));
+            }
+        }
+
+        if (values.isEmpty()) {
+            throw new IllegalArgumentException("No valid values found in expression.");
+        }
+        if (values.size() != operators.size() + 1) {
+            throw new IllegalArgumentException("Mismatched operators and numbers.");
+        }
+
+        // Order of Operations: Pass 1 (* and /)
+        for (int i = 0; i < operators.size(); i++) {
+            char op = operators.get(i);
+            if (op == '*' || op == '/') {
+                BigInteger left = values.get(i);
+                BigInteger right = values.get(i + 1);
+                BigInteger res;
+
+                if (op == '*') {
+                    res = left.multiply(right);
+                } else {
+                    if (right.equals(BigInteger.ZERO)) {
+                        throw new ArithmeticException("Division by zero encountered.");
+                    }
+                    res = left.divide(right);
+                }
+
+                values.set(i, res);
+                values.remove(i + 1);
+                operators.remove(i);
+                i--; 
+            }
+        }
+
+        // Order of Operations: Pass 2 (+ and -)
+        BigInteger total = values.get(0);
+        for (int i = 0; i < operators.size(); i++) {
+            char op = operators.get(i);
+            BigInteger nextVal = values.get(i + 1);
+
+            if (op == '+') {
+                total = total.add(nextVal);
+            } else if (op == '-') {
+                total = total.subtract(nextVal);
+            }
+        }
+
+        return total;
+    }
+
+    private static BigInteger parseToBigInteger(String value, int base) {
+        if (base != 2 && base != 8 && base != 10 && base != 16) {
+            throw new IllegalArgumentException("Unsupported base: " + base + ". Use 2, 8, 10, or 16.");
+        }
+
+        boolean negative = false;
+        if (value.startsWith("-")) {
+            negative = true;
+            value = value.substring(1);
+        } else if (value.startsWith("+")) {
+            value = value.substring(1);
+        }
+
+        if (value.isEmpty()) {
+            throw new IllegalArgumentException("Value cannot be empty.");
+        }
+
+        BigInteger result = BigInteger.ZERO;
+        BigInteger baseValue = BigInteger.valueOf(base);
+
+        for (int i = 0; i < value.length(); i++) {
+            char ch = Character.toUpperCase(value.charAt(i));
+            int digit = DIGITS.indexOf(ch);
+
+            if (digit < 0 || digit >= base) {
+                throw new IllegalArgumentException("Invalid digit '" + ch + "' for base " + base);
+            }
+
+            result = result.multiply(baseValue).add(BigInteger.valueOf(digit));
+        }
+
+        return negative ? result.negate() : result;
+    }
+
+    private static String formatBigInteger(BigInteger value, int base) {
+        if (value.equals(BigInteger.ZERO)) {
+            return "0";
+        }
+
+        BigInteger baseValue = BigInteger.valueOf(base);
+        BigInteger current = value.abs();
+        StringBuilder sb = new StringBuilder();
+
+        while (current.compareTo(BigInteger.ZERO) > 0) {
+            int remainder = current.mod(baseValue).intValue();
+            sb.append(DIGITS.charAt(remainder));
+            current = current.divide(baseValue);
+        }
+
+        if (value.signum() < 0) {
+            sb.append('-');
+        }
+
+        return sb.reverse().toString();
+    }
+}</script>
+<script type="text/plain" id="src-bitwise">import java.io.PrintStream;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+
+    // Regex handles binary operations, unary NOT operations (~val), and optional base specifiers
+    private static final Pattern EXPRESSION_PATTERN = Pattern.compile(
+            "^\\s*(~)?\\s*([0-9a-fA-FbxX]+)\\s*(?:(&|\\||\\^|<<|>>)\\s*([0-9a-fA-FbxX]+))?\\s*(?:(in|to|as)?\\s*(binary|decimal|octal|hex|hexadecimal|bin|dec|oct))?\\s*$",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    public static void main(String[] args) {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("==========================================");
+        System.out.println("       * BITWISE EXPRESSION CALCULATOR *  ");
+        System.out.println("==========================================");
+        System.out.println("Type 'exit' to quit.\n");
+
+        while (true) {
+            System.out.print(">> Enter problem: ");
+            String input = scanner.nextLine().trim();
+
+            if (input.equalsIgnoreCase("exit") || input.equalsIgnoreCase("quit")) {
+                break;
+            }
+
+            if (input.isEmpty()) {
+                continue;
+            }
+
+            processExpression(input);
+            System.out.println();
+        }
+
+        System.out.println("Calculator terminated. Thank you!");
+        scanner.close();
+    }
+
+    private static void processExpression(String input) {
+        // Normalize word-based operators to symbols
+        String normalizedInput = input
+                .replaceAll("(?i)\\bLEFT\\s+SHIFT\\b", "<<")
+                .replaceAll("(?i)\\bRIGHT\\s+SHIFT\\b", ">>")
+                .replaceAll("(?i)\\bAND\\b", "&")
+                .replaceAll("(?i)\\bOR\\b", "|")
+                .replaceAll("(?i)\\bXOR\\b", "^")
+                .replaceAll("(?i)\\bNOT\\b", "~");
+
+        Matcher matcher = EXPRESSION_PATTERN.matcher(normalizedInput);
+
+        if (!matcher.matches()) {
+            System.out.println("Error: Could not parse input. Format as 'val1 op val2' (e.g., 10010 & 011011).");
+            return;
+        }
+
+        try {
+            String notOp = matcher.group(1);
+            String val1Str = matcher.group(2);
+            String operator = matcher.group(3);
+            String val2Str = matcher.group(4);
+            String defaultBaseStr = matcher.group(6);
+
+            int defaultBase = determineDefaultBase(defaultBaseStr);
+
+            BigInteger a = parseValue(val1Str, defaultBase);
+            if (notOp != null && notOp.equals("~")) {
+                a = a.not();
+            }
+
+            BigInteger result;
+            int targetBinaryLength = val1Str.length(); // Preserves bit-width formatting from original input
+
+            if (operator != null && val2Str != null) {
+                if (operator.equals("<<") || operator.equals(">>")) {
+                    BigInteger b = parseValue(val2Str, 10); // Shifts are in base-10
+                    int shiftAmount = b.intValueExact();
+
+                    if (shiftAmount < 0) {
+                        System.out.println("Error: Shift amount cannot be negative.");
+                        return;
+                    }
+
+                    result = operator.equals("<<") ? a.shiftLeft(shiftAmount) : a.shiftRight(shiftAmount);
+                } else {
+                    BigInteger b = parseValue(val2Str, defaultBase);
+                    result = switch (operator) {
+                        case "&" -> a.and(b);
+                        case "|" -> a.or(b);
+                        case "^" -> a.xor(b);
+                        default -> throw new IllegalStateException("Unexpected operator: " + operator);
+                    };
+                }
+
+                System.out.println("\nCalculated: " + (notOp != null ? "~" : "") + val1Str + " " + operator + " " + val2Str);
+            } else {
+                result = a;
+                System.out.println("\nCalculated: " + (notOp != null ? "~" : "") + val1Str);
+            }
+
+            printAllBases(result, targetBinaryLength);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format for the specified base.");
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Shift value out of supported range.");
+        }
+    }
+
+    private static int determineDefaultBase(String baseStr) {
+        if (baseStr == null) return 2; // Default to Binary
+        String lower = baseStr.toLowerCase();
+        if (lower.startsWith("bin")) return 2;
+        if (lower.startsWith("dec")) return 10;
+        if (lower.startsWith("oct")) return 8;
+        if (lower.startsWith("hex")) return 16;
+        return 2;
+    }
+
+    private static BigInteger parseValue(String val, int defaultBase) {
+        String lower = val.toLowerCase();
+        if (lower.startsWith("0b")) {
+            return new BigInteger(val.substring(2), 2);
+        } else if (lower.startsWith("0x")) {
+            return new BigInteger(val.substring(2), 16);
+        } else if (lower.startsWith("0o")) {
+            return new BigInteger(val.substring(2), 8);
+        }
+        return new BigInteger(val, defaultBase);
+    }
+
+    private static void printAllBases(BigInteger value, int padLength) {
+        String rawBinary = value.toString(2);
+        
+        // Pad binary with leading zeros if non-negative
+        String paddedBinary;
+        if (value.compareTo(BigInteger.ZERO) >= 0) {
+            paddedBinary = String.format("%" + Math.max(padLength, rawBinary.length()) + "s", rawBinary).replace(' ', '0');
+        } else {
+            paddedBinary = rawBinary;
+        }
+
+        System.out.println("==========================================");
+        System.out.println("  Binary      : (" + paddedBinary + ") 2");
+        System.out.println("  Decimal     : " + value.toString(10));
+        System.out.println("  Octal       : (" + value.toString(8) + ") 8");
+        System.out.println("  Hexadecimal : (" + value.toString(16).toUpperCase() + ") 16");
+        System.out.println("==========================================");
+    }
+}</script>
+<script>
+(function(){
+  var P={
+    radix:{
+      name:"Radix Conversion",lang:"Java console program",file:"RadixConversion.java",zip:"RadixConversion.zip",
+      about:[
+        "You pick the format you are starting from, type a value, then pick the format you want. The program prints the converted result with the base written as a subscript.",
+        "It accepts negative numbers and spaces inside the value, and it checks every digit against the base you chose, so a 2 in a binary number gives a clear error instead of a wrong answer. You can keep converting until you answer N."
+      ],
+      features:[
+        "Four formats: binary, octal, decimal and hexadecimal.",
+        "Uses BigInteger, so very large numbers don\u2019t overflow.",
+        "The conversion is written by hand: it multiplies and adds each digit to read a number, and divides again and again to write one.",
+        "Loops until you decide to stop."
+      ],
+      example:"Starting format: 4 (Hexadecimal)\nValue: FF\nTarget format: 1 (Binary)\n\nConverted Result: (11111111)\u2082",
+      run:"javac RadixConversion.java\njava RadixConversion",
+      built:"Built with Java 14 or newer, BigInteger and Scanner."
+    },
+    arith:{
+      name:"Binary Arithmetic",lang:"Java console program",file:"BinaryArithmetic.java",zip:"BinaryArithmetic.zip",
+      about:[
+        "A calculator for one expression at a time. Each number is either written as (value)_base, like (1A)_16, or as a plain decimal number. It supports + - * / and works them out in the right order, multiplication and division first. The final answer is shown in binary, octal, decimal and hexadecimal at once.",
+        "It reads the expression with a regular expression and collects the numbers and operators into two lists. Then it makes one pass for * and /, and a second pass for + and -. Division by zero and invalid digits show an error message."
+      ],
+      features:[
+        "Bases 2, 8, 10 and 16, mixed freely in the same expression.",
+        "Follows the order of operations.",
+        "Uses BigInteger, so results can be as large as you like.",
+        "Division is whole-number division, so 7 / 2 gives 3."
+      ],
+      example:"Enter expression: (1010)_2 - 5 + (12)_10 * (1A)_16 + (77)_8\n\nBinary (Base 2)   : (101111100)\u2082\nOctal (Base 8)    : (574)\u2088\nDecimal (Base 10) : (380)\u2081\u2080\nHex (Base 16)     : (17C)\u2081\u2086",
+      run:"javac BinaryArithmetic.java\njava BinaryArithmetic",
+      built:"Built with Java, BigInteger, regular expressions and Scanner. Put spaces around the operators, like 1010 - 5."
+    },
+    bitwise:{
+      name:"Bitwise Operations",lang:"Java console program",file:"Main.java",zip:"BitwiseOperations.zip",
+      about:[
+        "A calculator for bitwise problems. Type something like 10010 & 011011, or use words: 1010 XOR 0110, NOT 1010 or 1 left shift 3. Numbers are read as binary unless you add a 0x prefix for hex or end the line with a format such as \u201cin hex\u201d.",
+        "The result is shown in binary, decimal, octal and hexadecimal. In binary, it keeps leading zeros to match the width of the number you typed."
+      ],
+      features:[
+        "AND, OR, XOR, NOT, left shift and right shift.",
+        "Accepts symbols or words, for example & or AND.",
+        "Understands 0b and 0x prefixes, or a format at the end of the line: binary, decimal, octal or hex.",
+        "Shift amounts are read as decimal numbers."
+      ],
+      example:">> Enter problem: 10010 & 011011\n\nBinary      : (10010) 2\nDecimal     : 18\nOctal       : (22) 8\nHexadecimal : (12) 16",
+      run:"javac Main.java\njava Main",
+      built:"Built with Java 14 or newer, BigInteger and regular expressions. The file is called Main.java because the class is called Main."
+    }
+  };
+  var dlg=document.getElementById("pdlg"),body=document.getElementById("pdlg-body"),
+      title=document.getElementById("pdlg-title"),lang=document.getElementById("pdlg-lang"),
+      status=document.getElementById("pdlg-status"),dlBtn=document.getElementById("pdlg-dl"),cur=null,timer;
+  function el(tag,text){var e=document.createElement(tag);if(text!=null)e.textContent=text;return e}
+  function say(m){status.textContent=m;clearTimeout(timer);timer=setTimeout(function(){status.textContent=""},7000)}
+  function openProject(id){
+    var p=P[id];cur=id;status.textContent="";
+    title.textContent=p.name;lang.textContent=p.lang;body.textContent="";
+    p.about.forEach(function(t){body.appendChild(el("p",t))});
+    body.appendChild(el("h3","Features"));
+    var ul=el("ul");p.features.forEach(function(t){ul.appendChild(el("li",t))});body.appendChild(ul);
+    body.appendChild(el("h3","Example"));body.appendChild(el("pre",p.example));
+    body.appendChild(el("h3","How to run it"));body.appendChild(el("pre",p.run));
+    body.appendChild(el("p",p.built));
+    document.getElementById("pdlg-src").textContent=document.getElementById("src-"+id).textContent;
+    document.getElementById("pdlg-code").open=false;
+    if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","");
+    dlg.scrollTop=0;
+  }
+  function closeDlg(){if(dlg.close)dlg.close();else dlg.removeAttribute("open")}
+  document.querySelectorAll(".proj").forEach(function(b){b.addEventListener("click",function(){openProject(b.dataset.p)})});
+  document.getElementById("pdlg-x").addEventListener("click",closeDlg);
+  document.getElementById("pdlg-close").addEventListener("click",closeDlg);
+  dlg.addEventListener("click",function(e){if(e.target===dlg)closeDlg()});
+  function saveLink(blob,name){
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;
+    document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+  }
+  document.getElementById("pdlg-copy").addEventListener("click",function(){
+    var src=document.getElementById("src-"+cur).textContent,code=document.getElementById("pdlg-code");
+    function ok(){say("Copied "+P[cur].file+".")}
+    function fail(){code.open=true;var r=document.createRange();r.selectNodeContents(document.getElementById("pdlg-src"));var s=getSelection();s.removeAllRanges();s.addRange(r);say("Press Ctrl+C to copy the selected code.")}
+    function legacy(){var t=document.createElement("textarea");t.value=src;t.style.position="fixed";t.style.opacity="0";dlg.appendChild(t);t.select();var d=false;try{d=document.execCommand("copy")}catch(e){}t.remove();return d}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(src).then(ok,function(){legacy()?ok():fail()})}
+    else{legacy()?ok():fail()}
+  });
+  dlBtn.addEventListener("click",async function(){
+    var p=P[cur],src=document.getElementById("src-"+cur).textContent,dl=null;
+    try{if(window.claude&&window.claude.use)dl=await window.claude.use("downloads")}catch(e){}
+    try{
+      if(dl){
+        if(window.JSZip){
+          var z=new JSZip();z.file(p.file,src);
+          await dl.save({filename:p.zip,data:await z.generateAsync({type:"blob"})});
+          say("Saved "+p.zip+". Unzip it to get "+p.file+".");
+        }else{
+          await dl.save({filename:p.file+".txt",data:src});
+          say("Saved. Rename the file to "+p.file+" before running it.");
+        }
+      }else if(window.claude){
+        document.getElementById("pdlg-code").open=true;
+        say("Downloads aren\u2019t available in this view. Copy the code below, or use the site from its own web address.");
+      }else{
+        saveLink(new Blob([src],{type:"text/plain"}),p.file);
+        say("Downloading "+p.file+".");
+      }
+    }catch(e){
+      if(e&&e.code==="declined"){say("Download cancelled.")}
+      else{document.getElementById("pdlg-code").open=true;say("Couldn\u2019t download here ("+((e&&e.code)||"error")+"). Copy the code below instead.")}
+    }
+  });
+})();
+</script>
+</body>
+</html>
