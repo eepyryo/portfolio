@@ -75,7 +75,7 @@ h1 em{display:block;font:italic 400 1.02em/1 var(--serif);letter-spacing:-.01em;
   display:inline-block;padding:.85rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;
   border:1px solid var(--blue);transition:background .2s,box-shadow .2s,transform .2s;
 }
-.btn.primary{background:var(--blue);color:#fff;box-shadow:0 0 28px var(--glow)}
+.btn.primary{background:var(--blue);color:#fff}
 .btn.primary:hover{background:var(--blue-2);transform:translateY(-2px)}
 .btn.ghost{color:var(--text)}
 .btn.ghost:hover{background:rgba(47,123,255,.15)}
@@ -108,7 +108,7 @@ button.btn{font:inherit;font-weight:700;cursor:pointer}
 .sa,.sb,.sc{transform-origin:150px 150px;animation:spin 60s linear infinite}
 .sb{animation-duration:34s;animation-direction:reverse}
 .sc{animation-duration:7s}
-.glow{animation:pulse 3.5s ease-in-out infinite}
+.glow{animation:none}
 @keyframes pulse{50%{opacity:.55}}
 @keyframes spin{to{transform:rotate(360deg)}}
 .profile{width:100%;max-width:26rem;margin:0;border:1px solid var(--line);border-radius:12px;background:rgba(10,18,34,.8);overflow:hidden}
@@ -129,10 +129,10 @@ footer a{color:var(--blue-2)}
 .proj-more>span{display:block;overflow:hidden;min-height:0;color:var(--muted);font-size:.95rem}
 .proj-more>span::before{content:"";display:block;height:.6rem}
 .proj-more small{display:block;margin-top:.5rem;font:400 .8rem var(--mono);color:var(--blue-2)}
-.proj:hover,.proj:focus-visible{transform:scale(1.025);border-color:var(--blue);background:var(--surface);box-shadow:0 0 36px rgba(47,123,255,.22)}
+.proj:hover,.proj:focus-visible{transform:scale(1.015);border-color:var(--blue);background:var(--surface);box-shadow:0 8px 24px rgba(0,0,0,.45)}
 .proj:hover .proj-more,.proj:focus-visible .proj-more{grid-template-rows:1fr}
 @media (hover:none){.proj-more{grid-template-rows:1fr}}
-dialog.pd{padding:0;border:1px solid var(--blue);border-radius:16px;background:#02060f;color:var(--text);width:min(54rem,92vw);max-height:94vh;box-shadow:0 0 90px rgba(47,123,255,.3)}
+dialog.pd{padding:0;border:1px solid var(--blue);border-radius:16px;background:#02060f;color:var(--text);width:min(54rem,92vw);max-height:94vh;box-shadow:0 24px 70px rgba(0,0,0,.65)}
 dialog.pd::backdrop{background:rgba(0,0,0,.78);backdrop-filter:blur(4px)}
 dialog.pd[open]{animation:pop .28s cubic-bezier(.2,.7,.2,1)}
 @keyframes pop{from{opacity:0;transform:scale(.94)}}
@@ -159,6 +159,8 @@ main.fit .intro{font-size:1.35rem;margin-top:1rem}
 main.fit .bio{margin-top:.8rem}
 main.fit .cta{margin-top:1.4rem}
 .pd-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start}
+.pd .profile.two{display:grid;grid-template-columns:1fr 1fr}
+.pd .profile.two div:nth-child(2){border-top:0}
 .pd-secs{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:0 2rem}
 .pd-secs h3{margin-top:1rem}
 .pd .profile{max-width:none;margin:.8rem 0 0}
@@ -172,9 +174,9 @@ main.fit .cta{margin-top:1.4rem}
   .portrait{width:8rem}
   .pd-cols{grid-template-columns:1fr}
 }
-main.hero{position:relative;max-width:none;margin:0;padding:0;gap:0;grid-template-columns:minmax(0,42%) 1fr;align-items:stretch;overflow:hidden}
+main.hero{position:relative;max-width:none;margin:0;padding:0;gap:0;grid-template-columns:minmax(0,48%) 1fr;align-items:stretch;overflow:hidden}
 .hero-text{display:flex;flex-direction:column;justify-content:center;padding:2rem clamp(1.25rem,4vw,4rem) 2rem clamp(1.25rem,5vw,4rem);position:relative;z-index:3}
-.hero-text h1{font-size:clamp(2.6rem,5.6vw,6rem)}
+.hero-text h1{font-size:clamp(3rem,7vw,7.5rem)}
 .hero-text h1 em{font:inherit;letter-spacing:inherit}
 .hud{position:absolute;inset:0;margin:0;overflow:hidden;isolation:isolate;background:radial-gradient(62% 95% at 76% 38%,#eaf3ff 0%,#b4d3ff 42%,#5b9bff 78%,#1b4fb8 100%)}
 .hud-img{position:absolute;right:0;bottom:0;height:127%;width:auto;max-width:none;mix-blend-mode:multiply}
@@ -192,10 +194,10 @@ button.btn{background:transparent;color:var(--text)}
   .hero-text{padding:1.75rem 1.25rem 2.5rem}
 }
 h1:focus{outline:none}
-.reactor{position:fixed;right:-9rem;top:calc(50% + 2.3rem);width:min(38rem,70vw);height:auto;aspect-ratio:1;transform:translateY(-50%);opacity:.4;pointer-events:none;z-index:0}
+.reactor{position:fixed;right:-9rem;top:calc(50% + 2.3rem);width:min(38rem,70vw);height:auto;aspect-ratio:1;transform:translateY(-50%);opacity:.16;pointer-events:none;z-index:0}
 main.about{position:relative}
 .about>section,.about>.col{position:relative;z-index:1}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(47,123,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(47,123,255,.08) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 72% 50%,#000 0,transparent 72%);mask-image:radial-gradient(ellipse at 72% 50%,#000 0,transparent 72%)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(47,123,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(47,123,255,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 72% 50%,#000 0,transparent 72%);mask-image:radial-gradient(ellipse at 72% 50%,#000 0,transparent 72%)}
 .brand small .dot{display:inline-block;width:.4rem;height:.4rem;margin-right:.45rem;border-radius:50%;background:#4dff9a;box-shadow:0 0 8px #4dff9a;animation:pulse 2.4s ease-in-out infinite}
 .proj,.term{position:relative}
 .proj::before,.proj::after,.term::before,.term::after,.pd-in::before,.pd-in::after{content:"";position:absolute;width:.9rem;height:.9rem;border:0 solid var(--blue-2);opacity:.6;pointer-events:none;transition:opacity .25s}
@@ -205,7 +207,42 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .pd-in{position:relative}
 .pd-in::before{top:.7rem;left:.7rem;width:1.3rem;height:1.3rem;border-top-width:2px;border-left-width:2px}
 .pd-in::after{bottom:.7rem;right:.7rem;width:1.3rem;height:1.3rem;border-bottom-width:2px;border-right-width:2px}
-@media (max-width:52rem){.reactor{right:-40%;opacity:.28}}
+@media (max-width:52rem){.reactor{right:-40%;opacity:.14}.pd .profile.two{grid-template-columns:1fr}.pd .profile.two div:nth-child(2){border-top:1px solid var(--line)}}
+main.prof{display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:.8rem;max-width:92rem;width:100%;margin:0 auto;padding:clamp(.6rem,1.8vh,1.4rem) clamp(1rem,3vw,2.5rem)}
+.prof-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.prof-head .page{margin:0 0 .2rem}
+main.prof h1{font-size:clamp(1.7rem,3.4vh + .9vw,2.8rem);line-height:1}
+.prof-head h1 em{display:inline}
+.prof-hint{margin:0;font:400 .78rem var(--mono);color:var(--muted)}
+.pgrid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.8rem}
+.pn{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.1rem);position:relative;font-size:var(--pfs);line-height:1.4;padding:.8em 1em .9em;border:1px solid var(--line);border-radius:12px;background:#02060f;cursor:pointer;transition:border-color .2s,background .2s}
+.pn.s4{grid-column:span 4}
+.pn.s2{grid-column:span 2}
+.pn:hover{border-color:var(--blue);background:var(--surface)}
+.pn::before,.pn::after{content:"";position:absolute;width:.9rem;height:.9rem;border:0 solid var(--blue-2);opacity:.6;pointer-events:none}
+.pn::before{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px;border-top-left-radius:12px}
+.pn::after{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px;border-bottom-right-radius:12px}
+.pn-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.55em}
+.pn h2{margin:0;font:500 1em var(--mono);color:var(--blue-2)}
+.pn-open{width:1.7em;height:1.7em;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:none;color:var(--muted);font-size:1em;cursor:pointer;line-height:1}
+.pn-open:hover{color:var(--text);border-color:var(--blue)}
+.pn h3{margin:.65em 0 .2em;font:500 .85em var(--mono);color:var(--muted)}
+.pn h2+h3,.pn .pn-top+h3{margin-top:0}
+.pn ul{list-style:none;margin:0;padding:0;display:grid;gap:.2em}
+.pn li{padding-left:1em;position:relative}
+.pn li::before{content:">";position:absolute;left:0;font-family:var(--mono);color:var(--blue)}
+.pn dl{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:1.4em}
+.pn dl div{display:grid;grid-template-columns:6.2em minmax(0,1fr);gap:.6em;padding:.3em 0;border-top:1px dashed var(--line)}
+.pn dt{font:400 .85em var(--mono);color:var(--muted);padding-top:.1em}
+.pn dd{margin:0}
+.pn dd a{color:var(--blue-2)}
+.pn .quote{margin:.3em 0 0;font:italic 1.15em var(--serif);color:var(--text)}
+@media (max-width:52rem){
+  .pgrid{grid-template-columns:1fr}
+  .pn.s4,.pn.s2{grid-column:auto}
+  .pn{--pfs:.95rem}
+  .pn dl{grid-template-columns:1fr}
+}
 .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 @keyframes rise{from{opacity:0;transform:translateY(14px)}}
 @media (max-width:52rem){
@@ -226,7 +263,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 <a class="skip" href="#home">Skip to content</a>
 
 <header class="nav">
-  <a class="brand" href="#home">Rudolf Art J. Nider<small><i class="dot"></i>portfolio // online</small></a>
+  <a class="brand" href="#home">Rudolf Art J. Nider<small>portfolio</small></a>
   <nav aria-label="Main">
     <ul>
       <li><a href="#home" data-view="home" aria-current="page">Home</a></li>
@@ -252,7 +289,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   </figure>
 </main>
 
-<main id="profile" class="about fit" hidden>
+<main id="profile" class="prof" hidden>
   <svg class="reactor" viewBox="0 0 300 300" aria-hidden="true">
     <defs>
       <radialGradient id="rh1"><stop offset="0" stop-color="#2f7bff" stop-opacity=".5"/><stop offset="1" stop-color="#2f7bff" stop-opacity="0"/></radialGradient>
@@ -270,34 +307,92 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <circle cx="150" cy="150" r="44" fill="url(#rc1)"/>
     <text x="150" y="164" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-style="italic" font-size="42" fill="#031230">RN</text>
   </svg>
-  <section class="rise" aria-labelledby="profile-title">
-    <p class="page">Page 02 / Profile</p>
-    <h1 id="profile-title">My <em>profile.</em></h1>
-    <p class="intro">Here’s some information about myself.</p>
-    <p class="bio">Welcome to my portfolio. Everything you need to know about me is here.</p>
-    <div class="cta">
-      <a class="btn ghost" href="#home">Back to home</a>
+  <div class="prof-head rise">
+    <div>
+      <p class="page">Page 02 / Profile</p>
+      <h1 id="profile-title">My <em>profile.</em></h1>
     </div>
-  </section>
-  <div class="col rise">
-    <div class="projs">
-      <button class="proj" type="button" data-a="education" aria-haspopup="dialog">
-        <span class="proj-top"><span class="proj-name">Education</span></span>
-        <span class="proj-more"><span>University of the Cordilleras and Data Center College of the Philippines.<small>Open for details</small></span></span>
-      </button>
-      <button class="proj" type="button" data-a="personal" aria-haspopup="dialog">
-        <span class="proj-top"><span class="proj-name">Personal information</span></span>
-        <span class="proj-more"><span>Who I am, where I live, languages and contact details.<small>Open for details</small></span></span>
-      </button>
-      <button class="proj" type="button" data-a="skills" aria-haspopup="dialog">
-        <span class="proj-top"><span class="proj-name">Skills</span></span>
-        <span class="proj-more"><span>Java, web basics and the strengths I bring.<small>Open for details</small></span></span>
-      </button>
-      <button class="proj" type="button" data-a="experience" aria-haspopup="dialog">
-        <span class="proj-top"><span class="proj-name">Experience</span></span>
-        <span class="proj-more"><span>Jobs, commissions, tutoring, projects and achievements.<small>Open for details</small></span></span>
-      </button>
-    </div>
+    <p class="prof-hint">Click any panel to open it larger.</p>
+  </div>
+  <div class="pgrid rise">
+    <section class="pn s4" data-a="personal" aria-labelledby="pn-personal">
+      <div class="pn-top"><h2 id="pn-personal">Personal information</h2><button class="pn-open" type="button" aria-label="Open personal information larger">&#x2922;</button></div>
+      <dl>
+        <div><dt>Name</dt><dd>Rudolf Art J. Nider</dd></div>
+        <div><dt>Birthday</dt><dd>October 20, 2008</dd></div>
+        <div><dt>Age</dt><dd>18</dd></div>
+        <div><dt>Birthplace</dt><dd>Baguio General Hospital, Baguio City</dd></div>
+        <div><dt>Nationality</dt><dd>Filipino</dd></div>
+        <div><dt>Religion</dt><dd>Roman Catholic</dd></div>
+        <div><dt>Home address</dt><dd>126 Tiptop Rd, Baguio City, Philippines</dd></div>
+        <div><dt>Languages</dt><dd>Japanese, English, Filipino</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:rudolfartnider@gmail.com">rudolfartnider@gmail.com</a></dd></div>
+        <div><dt>Phone</dt><dd><a href="tel:+639565063993">0956 506 3993</a></dd></div>
+      </dl>
+    </section>
+    <section class="pn s2" data-a="education" aria-labelledby="pn-education">
+      <div class="pn-top"><h2 id="pn-education">Education</h2><button class="pn-open" type="button" aria-label="Open education larger">&#x2922;</button></div>
+      <h3>University</h3>
+      <ul>
+        <li>University of the Cordilleras</li>
+        <li>College of Information Technology and Computer Science</li>
+        <li>BSCS, first year</li>
+      </ul>
+      <h3>High school</h3>
+      <ul>
+        <li>Data Center College of the Philippines (DCCP)</li>
+        <li>STEM Honor Student</li>
+      </ul>
+    </section>
+    <section class="pn s2" data-a="experience" aria-labelledby="pn-experience">
+      <div class="pn-top"><h2 id="pn-experience">Experience</h2><button class="pn-open" type="button" aria-label="Open experience larger">&#x2922;</button></div>
+      <h3>Work</h3>
+      <ul>
+        <li>Cafe: cooking area and register, around 5 months</li>
+        <li>Encoder for a relative’s family business, on the spot</li>
+      </ul>
+      <h3>Commissions and tutoring</h3>
+      <ul>
+        <li>Solving math problems, professional essays</li>
+        <li>Tutoring: Mathematics, English / Communication</li>
+      </ul>
+      <h3>Projects</h3>
+      <ul>
+        <li>Three Java programs and this website</li>
+      </ul>
+    </section>
+    <section class="pn s2" data-a="skills" aria-labelledby="pn-skills">
+      <div class="pn-top"><h2 id="pn-skills">Skills</h2><button class="pn-open" type="button" aria-label="Open skills larger">&#x2922;</button></div>
+      <h3>Technical</h3>
+      <ul>
+        <li>Java: BigInteger, regular expressions, Scanner</li>
+        <li>HTML, CSS and JavaScript (learning)</li>
+        <li>Mathematics, essay writing, tutoring</li>
+      </ul>
+      <h3>Strengths</h3>
+      <ul>
+        <li>Flexible, fast learner, fast worker</li>
+        <li>Works well under pressure</li>
+        <li>Improvises well; good listener one on one</li>
+      </ul>
+    </section>
+    <section class="pn s2" data-a="interests" aria-labelledby="pn-interests">
+      <div class="pn-top"><h2 id="pn-interests">Interests</h2><button class="pn-open" type="button" aria-label="Open interests larger">&#x2922;</button></div>
+      <h3>Hobbies</h3>
+      <ul>
+        <li>Creating digital illustrations</li>
+        <li>Playing the bass guitar</li>
+      </ul>
+      <h3>Favorite subjects</h3>
+      <ul>
+        <li>English and anything with math</li>
+      </ul>
+      <h3>Goals</h3>
+      <ul>
+        <li>Get a good job and build a career that makes me rich</li>
+      </ul>
+      <p class="quote">“That’s that and this is this.”</p>
+    </section>
   </div>
 </main>
 
@@ -1111,7 +1206,7 @@ public class Main {
     education:{
       title:"Education",
       secs:[
-        {h:"University",items:["University of the Cordilleras, Baguio City, Philippines.","Bachelor of Science in Computer Science (BSCS), currently in first year."]},
+        {h:"University",items:["University of the Cordilleras, Baguio City, Philippines.","College of Information Technology and Computer Science.","Bachelor of Science in Computer Science (BSCS), first year."]},
         {h:"High school",items:["Data Center College of the Philippines (DCCP).","Graduated as a STEM Honor Student."]}
       ]
     },
@@ -1124,12 +1219,24 @@ public class Main {
       ],
       rows:[
         ["Name","Rudolf Art J. Nider"],
+        ["Birthday","October 20, 2008"],
         ["Age","18"],
-        ["Location","Baguio City, Philippines"],
+        ["Birthplace","Baguio General Hospital, Baguio City"],
+        ["Nationality","Filipino"],
+        ["Religion","Roman Catholic"],
+        ["Home address","126 Tiptop Rd, Baguio City, Philippines"],
         ["Languages","Japanese, English, Filipino"],
-        ["Goals","Get a good job and build a career that makes me rich."],
         ["Email","rudolfartnider@gmail.com","mailto:rudolfartnider@gmail.com"],
         ["Phone","0956 506 3993","tel:+639565063993"]
+      ]
+    },
+    interests:{
+      title:"Interests",
+      secs:[
+        {h:"Hobbies",items:["Creating digital illustrations.","Playing the bass guitar."]},
+        {h:"Favorite subjects",items:["English.","Anything with math."]},
+        {h:"Goals",items:["Get a good job.","Build a career that makes me rich."]},
+        {h:"Personal quote",items:["\u201cThat\u2019s that and this is this.\u201d"]}
       ]
     },
     skills:{
@@ -1155,9 +1262,9 @@ public class Main {
   function openA(id){
     var a=A[id];title.textContent=a.title;label.textContent="Profile // "+a.title.toLowerCase();body.textContent="";
     if(a.rows){
-      var wrap=el("div");wrap.className="pd-cols";
+      var wrap=el("div");wrap.className="pd-stack";
       var left=el("div");a.paras.forEach(function(t,i){var p=el("p",t);if(i===0){p.style.color="var(--text)";p.style.fontFamily="var(--serif)";p.style.fontStyle="italic";p.style.fontSize="1.4rem"}left.appendChild(p)});
-      var dl=el("dl");dl.className="profile";
+      var dl=el("dl");dl.className="profile two";
       a.rows.forEach(function(r){
         var d=el("div"),dt=el("dt",r[0]),dd=el("dd");
         if(r[2]){var l=el("a",r[1]);l.href=r[2];dd.appendChild(l)}else{dd.textContent=r[1]}
@@ -1176,7 +1283,7 @@ public class Main {
     dlg.scrollTop=0;
   }
   function closeA(){if(dlg.close)dlg.close();else dlg.removeAttribute("open")}
-  document.querySelectorAll("[data-a]").forEach(function(b){b.addEventListener("click",function(){openA(b.dataset.a)})});
+  document.querySelectorAll("[data-a]").forEach(function(b){b.addEventListener("click",function(e){if(e.target.closest("a"))return;openA(b.dataset.a)})});
   document.getElementById("adlg-x").addEventListener("click",closeA);
   dlg.addEventListener("click",function(e){if(e.target===dlg)closeA()});
 })();
