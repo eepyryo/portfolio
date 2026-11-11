@@ -369,7 +369,7 @@ main#achievements{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.05rem);font-size:var(-
   <nav aria-label="Main">
     <ul>
       <li><a href="#home" data-view="home" aria-current="page">Home</a></li>
-      <li><a href="#profile" data-view="profile">Profile</a></li>
+      <li><a href="#profile" data-view="profile">Personal Information</a></li>
       <li><a href="#achievements" data-view="achievements">Achievements</a></li>
       <li><a href="#projects" data-view="projects">Projects</a></li>
       <li><a href="#contact" data-view="contact">Contact</a></li>
@@ -382,7 +382,7 @@ main#achievements{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.05rem);font-size:var(-
     <h1 id="name">Rudolf Art <em>J. Nider.</em></h1>
     <p class="tag">Fast learner. Fast worker. Built to adapt.</p>
     <div class="cta">
-      <a class="btn primary" href="#profile">See my profile</a>
+      <a class="btn primary" href="#profile">See my personal information</a>
       <button class="btn ghost" id="copy" type="button" data-email="rudolfartnider@gmail.com">Copy email</button>
     </div>
     <p class="status" id="status" role="status" aria-live="polite"></p>
@@ -412,7 +412,7 @@ main#achievements{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.05rem);font-size:var(-
   </svg>
   <div class="prof-head rise">
     <div>
-      <p class="page">Page 02 / Profile</p>
+      <p class="page">Page 02 / Personal Information</p>
       <h1 id="profile-title">Here’s some <em>information about myself.</em></h1>
     </div>
     <p class="prof-hint">Click Experience or Skills to open it larger.</p>
@@ -562,7 +562,7 @@ main#achievements{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.05rem);font-size:var(-
       <h2 id="how-built">How this site was built</h2>
       <ul>
         <li>Plain HTML, CSS and JavaScript. No frameworks, no build tools.</li>
-        <li>One file with five views: Home, Profile, Achievements, Projects and Contact.</li>
+        <li>One file with five views: Home, Personal Information, Achievements, Projects and Contact.</li>
         <li>Fully usable with a keyboard, with visible focus and a skip link.</li>
         <li>Adjusts to phone and desktop screens.</li>
         <li>Animations stop for visitors who turn on reduced motion.</li>
@@ -674,7 +674,7 @@ main#achievements{--pfs:clamp(.72rem,calc(.5vw + .85vh),1.05rem);font-size:var(-
 document.getElementById("yr").textContent=new Date().getFullYear();
 (function(){
   var views={home:document.getElementById("home"),profile:document.getElementById("profile"),achievements:document.getElementById("achievements"),projects:document.getElementById("projects"),contact:document.getElementById("contact")};
-  var titles={home:"Rudolf Art J. Nider — Portfolio",profile:"Profile — Rudolf Art J. Nider",achievements:"Achievements — Rudolf Art J. Nider",projects:"Projects — Rudolf Art J. Nider",contact:"Contact — Rudolf Art J. Nider"};
+  var titles={home:"Rudolf Art J. Nider — Portfolio",profile:"Personal Information — Rudolf Art J. Nider",achievements:"Achievements — Rudolf Art J. Nider",projects:"Projects — Rudolf Art J. Nider",contact:"Contact — Rudolf Art J. Nider"};
   function route(){
     var key=location.hash.slice(1);
     if(key==="about"||key==="personal"||key==="background")key="profile";
@@ -1383,7 +1383,7 @@ public class Main {
   var dlg=document.getElementById("adlg"),body=document.getElementById("adlg-body"),title=document.getElementById("adlg-title"),label=document.getElementById("adlg-label");
   function el(t,x){var e=document.createElement(t);if(x!=null)e.textContent=x;return e}
   function openA(id){
-    var a=A[id];title.textContent=a.title;label.textContent="Profile // "+a.title.toLowerCase();body.textContent="";
+    var a=A[id];title.textContent=a.title;label.textContent="Personal information // "+a.title.toLowerCase();body.textContent="";
     if(a.rows){
       var wrap=el("div");wrap.className="pd-stack";
       var left=el("div");a.paras.forEach(function(t,i){var p=el("p",t);if(i===0){p.style.color="var(--text)";p.style.fontFamily="var(--serif)";p.style.fontStyle="italic";p.style.fontSize="1.4rem"}left.appendChild(p)});
